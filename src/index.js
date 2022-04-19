@@ -5,8 +5,8 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import './index.css';
 import App from './App';
-import {strainsReducer} from './reducers/strainsReducer'
-import { typesReducer } from './reducers/typesReducer';
+import { strains } from './reducers/strains'
+import { types } from './reducers/types';
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,8 +14,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const rootReducer = combineReducers({
-  strains: strainsReducer,
-  types: typesReducer
+  strains,
+  types
 })
 
 const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk)))

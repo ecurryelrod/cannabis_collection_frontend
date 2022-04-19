@@ -4,7 +4,7 @@
 //     effects: []
 // }
 
-export const strainsReducer = (state = [], action) => {
+export const strains = (state = [], action) => {
     switch (action.type) {
         case 'GET_STRAINS': 
             return [...state, action.strain]
