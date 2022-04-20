@@ -15,6 +15,7 @@ class StrainForm extends Component {
 
     handleOnChange = e => this.setState({[e.target.name]: e.target.value})
 
+    // need to figure out how to uncheck a box and have it disappear from state
     handleEffectSelect = e => this.setState({effects: [...this.state.effects, e.target.value]})
 
     handleOnSubmit = e => {
@@ -42,7 +43,7 @@ class StrainForm extends Component {
                     name={effect.attributes.name} 
                     type='checkbox' 
                     value={effect.attributes.name} 
-                    onClick={this.handleEffectSelect}
+                    onChange={this.handleEffectSelect}
                 />
                 <label>{effect.attributes.name}</label>
             </div>
@@ -50,11 +51,14 @@ class StrainForm extends Component {
 
         return (
             <div>
-                <h3>Add a New Strain</h3>
+                <h2>Add a New Strain</h2>
                 <form onSubmit={this.handleOnSubmit}>
-                    <select name="type">
-                        {types}
-                    </select><br/>
+                    <p>
+                        <strong>Select Strain Type: </strong>
+                        <select name="type">
+                            {types}
+                        </select><br/>
+                    </p>
                     <input 
                         name="name" 
                         placeholder="Strain Name"
@@ -85,7 +89,9 @@ class StrainForm extends Component {
                         placeholder="CBG Amount" 
                         onChange={this.handleOnChange}
                     /><br/>
+                    <p><strong>Select Effects Experienced:</strong></p>
                     {effects}
+                    <br/>
                     <input type="submit" />
                 </form>
                 {console.log(this.state)}
