@@ -73,20 +73,22 @@ class StrainForm extends Component {
                     <input 
                         name="thc" 
                         placeholder="THC Amount" 
+                        onChange={this.handleOnChange}
                     /><br/>
                     <input 
                         name="cbd" 
                         placeholder="CBD Amount" 
+                        onChange={this.handleOnChange}
                     /><br/>
                     <input 
                         name="cbg" 
                         placeholder="CBG Amount" 
+                        onChange={this.handleOnChange}
                     /><br/>
                     {effects}
                     <input type="submit" />
                 </form>
                 {console.log(this.state)}
-                {console.log(this.state.effects)}
             </div>
         )
     }
