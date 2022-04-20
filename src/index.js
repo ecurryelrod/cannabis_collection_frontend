@@ -7,6 +7,7 @@ import './index.css';
 import App from './App';
 import { strains } from './reducers/strains'
 import { types } from './reducers/types';
+import { effects } from './reducers/effects';
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,7 +16,8 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const rootReducer = combineReducers({
   strains,
-  types
+  types,
+  effects
 })
 
 const store = createStore(rootReducer, composeEnhancer(applyMiddleware(thunk)))
