@@ -8,10 +8,14 @@ class StrainForm extends Component {
         terpene: "",
         thc: "",
         cbd: "",
-        cbg: ""
+        cbg: "",
+        type: "",
+        effects: []
     }
 
     handleOnChange = e => this.setState({[e.target.name]: e.target.value})
+
+    handleEffectSelect = e => this.setState({effects: [...this.state.effects, e.target.value]})
 
     handleOnSubmit = e => {
         e.preventDefault()
@@ -22,13 +26,27 @@ class StrainForm extends Component {
             terpene: "",
             thc: "",
             cbd: "",
-            cbg: ""
+            cbg: "",
+            type: "",
+            effects: []
         })
     }
 
     render() {
         // debugger
-        const types = this.props.types.map(type => <option key={type.id} value={type.attributes.name}>{type.attributes.name}</option>)
+        const types = this.props.types.map(type => <option key={type.attributes.id} value={type.attributes.name}>{type.attributes.name}</option>)
+        const effects = this.props.effects.map(effect => (
+            <div key={effect.attributes.id}>
+                <input 
+                    id={effect.attributes.name} 
+                    name={effect.attributes.name} 
+                    type='checkbox' 
+                    value={effect.attributes.name} 
+                    onClick={this.handleEffectSelect}
+                />
+                <label>{effect.attributes.name}</label>
+            </div>
+        ))
 
         return (
             <div>
@@ -47,20 +65,36 @@ class StrainForm extends Component {
                         placeholder="description" 
                         onChange={this.handleOnChange}
                     /><br/>
-                    <input name="terpene" placeholder="aroma/flavor" /><br/>
-                    <input name="thc" placeholder="THC Amount" /><br/>
-                    <input name="cbd" placeholder="CBD Amount" /><br/>
-                    <input name="cbg" placeholder="CBG Amount" /><br/>
-                    <input type="checkbox" value={this.state.effects} /><br/>
+                    <input 
+                        name="terpene" 
+                        placeholder="aroma/flavor" 
+                        onChange={this.handleOnChange} 
+                    /><br/>
+                    <input 
+                        name="thc" 
+                        placeholder="THC Amount" 
+                    /><br/>
+                    <input 
+                        name="cbd" 
+                        placeholder="CBD Amount" 
+                    /><br/>
+                    <input 
+                        name="cbg" 
+                        placeholder="CBG Amount" 
+                    /><br/>
+                    {effects}
                     <input type="submit" />
                 </form>
+                {console.log(this.state)}
+                {console.log(this.state.effects)}
             </div>
         )
     }
 }
 
 const mapStateToProps = state => ({
-    types: state.types
+    types: state.types,
+    effects: state.effects
 })
 
 export default connect(mapStateToProps)(StrainForm)
