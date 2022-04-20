@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 // import StrainForm from './components/strains/StrainForm';
 import { connect } from 'react-redux';
 import { fetchStrains } from './actions/strains';
-import Strains from './components/strains/strains';
+import Strains from './components/strains/Strains';
 
 class App extends Component {
   render() {
