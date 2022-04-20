@@ -11,7 +11,6 @@ export const fetchTypes = () => {
     return dispatch => {
         fetch('http://127.0.0.1:3000/api/v1/types')
         .then(resp => resp.json())
-        .then(types => {debugger})
         .then(types => dispatch(setTypes(types.data)))
     }
 }
