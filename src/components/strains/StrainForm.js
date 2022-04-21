@@ -34,7 +34,7 @@ class StrainForm extends Component {
     handleOnSubmit = e => {
         e.preventDefault()
         this.props.createStrain(this.state)
-        // checkboxes do not reset to unchecked after submit
+        // checkboxes do not reset to unchecked after submit, must refresh page...
         this.setState({
             name: "",
             description: "",
