@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import { connect } from "react-redux";
 import { createStrain } from "../../actions/strains";
-// import { addStrain } from "../../actions/strains";
 
 class StrainForm extends Component {
     state = {
@@ -35,6 +34,7 @@ class StrainForm extends Component {
     handleOnSubmit = e => {
         e.preventDefault()
         this.props.createStrain(this.state)
+        // checkboxes do not reset to unchecked after submit
         this.setState({
             name: "",
             description: "",
@@ -73,39 +73,45 @@ class StrainForm extends Component {
                         </select><br/>
                     </p>
                     <input 
+                        type="text"
                         name="name" 
                         placeholder="Strain Name"
                         value={this.state.name}
                         onChange={this.handleOnChange}
                     /><br/>
                     <input 
+                        type="text"
                         name="description" 
                         placeholder="description"
                         value={this.state.description} 
                         onChange={this.handleOnChange}
                     /><br/>
                     <input 
+                        type="text"
                         name="terpene" 
                         placeholder="aroma/flavor" 
                         value={this.state.terpene}
                         onChange={this.handleOnChange} 
                     /><br/>
                     <input 
+                        type="number"
                         name="thc_amount" 
                         placeholder="THC Amount" 
-                        value={this.state.thc}
+                        value={this.state.thc_amount}
                         onChange={this.handleOnChange}
                     /><br/>
                     <input 
+                        type="number"
                         name="cbd_amount" 
                         placeholder="CBD Amount" 
-                        value={this.state.cbd}
+                        value={this.state.cbd_amount}
                         onChange={this.handleOnChange}
                     /><br/>
                     <input 
+                        type="number"
                         name="cbg_amount" 
                         placeholder="CBG Amount" 
-                        value={this.state.cbg}
+                        value={this.state.cbg_amount}
                         onChange={this.handleOnChange}
                     /><br/>
                     <p><strong>Select Effects Experienced:</strong></p>

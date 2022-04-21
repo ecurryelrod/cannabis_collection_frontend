@@ -7,7 +7,6 @@ export const setStrains = strains => {
 }
 
 export const addStrain = strain => {
-    debugger
     return {
         type: 'ADD_STRAIN',
         strain
@@ -41,7 +40,7 @@ export const createStrain = (formData) => {
             type_id: formData.type_id,
             effect_ids: formData.effects
         }
-        
+
         fetch('http://127.0.0.1:3000/api/v1/strains', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
