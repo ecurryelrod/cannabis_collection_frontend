@@ -6,6 +6,14 @@ export const setStrains = strains => {
     }
 }
 
+export const addStrain = strain => {
+    debugger
+    return {
+        type: 'ADD_STRAIN',
+        strain
+    }
+}
+
 // asynchronous actions
 export const fetchStrains = () => {
     return dispatch => {
@@ -18,5 +26,12 @@ export const fetchStrains = () => {
                 dispatch(setStrains(strains.data))
             }
         })
+    }
+}
+
+export const createStrain = (formData) => {
+    debugger
+    return dispatch => {
+        
     }
 }
