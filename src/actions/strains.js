@@ -30,8 +30,17 @@ export const fetchStrains = () => {
 }
 
 export const createStrain = (formData) => {
-    debugger
     return dispatch => {
-        
+        const sendableData = {
+            name: formData.name,
+            description: formData.description,
+            terpene: formData.terpene,
+            thc_amount: formData.thc_amount,
+            cbd_amount: formData.cbd_amount,
+            cbg_amount: formData.cbg_amount,
+            type_id: formData.type_id,
+            effect_ids: formData.effects
+        }
+        debugger
     }
 }
