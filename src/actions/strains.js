@@ -13,6 +13,13 @@ export const addStrain = strain => {
     }
 }
 
+export const strainDeleted = strainId => {
+    return {
+        type: 'DELETE_STRAIN',
+        strainId
+    }
+}
+
 // asynchronous actions
 export const fetchStrains = () => {
     return dispatch => {
@@ -48,5 +55,12 @@ export const createStrain = (formData) => {
         })
         .then(resp => resp.json())
         .then(strains => dispatch(addStrain(strains.data)))
+    }
+}
+
+export const deleteStrain = strainId => {
+    debugger
+    return dispatch =>  {
+
     }
 }

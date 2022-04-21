@@ -14,9 +14,9 @@ const Strain = props => {
             <ul>
                 {props.strain.effects.map(effect => <div key={effect.id}>{effect.name}</div>)}
             </ul>
+            <button onClick={() => props.delete(props.strain.id)}>Delete</button>
         </div>
     )
-    
 }
 
 export default Strain
