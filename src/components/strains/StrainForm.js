@@ -120,7 +120,7 @@ class StrainForm extends Component {
                     <input type="submit" />
                 </form>
                 {/* {this.state.name} */}
-                {console.log(this.state)}
+                {/* {console.log(this.state)} */}
             </div>
         )
     }
