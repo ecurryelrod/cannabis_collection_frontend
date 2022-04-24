@@ -7,14 +7,24 @@ import { fetchTypes } from './actions/types';
 import { fetchEffects } from './actions/effects';
 import Strains from './components/strains/Strains';
 import Navbar from './components/Navbar';
+import Home from './components/Home';
 
 class App extends Component {
   render() {
     // debugger
     return (
-      <div className="App">
+      <div className="App" style={{
+          backgroundImage: "url(/weedPic.png)",
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          width: '100vw',
+          height: '100vh'
+        }}>
         <Router>
           <Navbar />
+          <Route>
+            <Home />
+          </Route>
           <Route path="/strains">
             <Strains getStrains={this.props.fetchStrains()} />
           </Route>
