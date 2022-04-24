@@ -51,7 +51,7 @@ class StrainForm extends Component {
         // debugger
         const types = this.props.types.map(type => <option key={type.attributes.id} value={type.attributes.id}>{type.attributes.name}</option>)
         const effects = this.props.effects.map(effect => (
-            <div key={effect.attributes.id}>
+            <div className="checkbox" key={effect.attributes.id}>
                 <input 
                     id={effect.attributes.id}
                     type='checkbox' 

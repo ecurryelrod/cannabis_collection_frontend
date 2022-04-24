@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1 {
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
+h3 {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+.checkbox {
+  color: white;
+}
+
+/* .App {
+  background-image: "url(/weedPic.png)";
+  background-position: 'center';
+  background-size: 'cover';
+  width: '100vw';
+  height: '100vh';
+} */
