@@ -32,6 +32,14 @@ p {
   color: white;
 }
 
+ul {
+  color: white;
+}
+
+.effects {
+  background-color: aqua;
+}
+
 /* .App {
   background-image: "url(/weedPic.png)";
   background-position: 'center';

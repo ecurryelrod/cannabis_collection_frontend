@@ -11,9 +11,9 @@ const Strain = props => {
             <p><strong>CBD: </strong>{props.strain.cbd_amount} g</p>
             <p><strong>CBG: </strong>{props.strain.cbg_amount} g</p>
             <p><strong>Effects:</strong></p>
-            <ul>
+            <div className="effects">
                 {props.strain.effects.map(effect => <div key={effect.id}>{effect.name}</div>)}
-            </ul>
+            </div>
             <button onClick={() => props.delete(props.strain.id)}>Delete</button>
         </div>
     )
