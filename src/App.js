@@ -22,14 +22,17 @@ class App extends Component {
         }}>
         <Router>
           <Navbar />
-          <Route>
+          <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/strains">
+          <Route exact path="/strains">
             <Strains getStrains={this.props.fetchStrains()} />
           </Route>
+          <Route exact path="/strains/new">
+            <StrainForm getTypes={this.props.fetchTypes()} getEffects={this.props.fetchEffects()} />
+          </Route>
         </Router>
-        <StrainForm getTypes={this.props.fetchTypes()} getEffects={this.props.fetchEffects()} />
+        {/* <StrainForm getTypes={this.props.fetchTypes()} getEffects={this.props.fetchEffects()} /> */}
         {/* <Strains getStrains={this.props.fetchStrains()} /> */}
       </div>
     );

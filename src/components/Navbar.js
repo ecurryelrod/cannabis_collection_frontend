@@ -21,7 +21,7 @@ const NavBar = (props) => (
         </NavLink>
 
         <NavLink 
-            to="/" 
+            to="/strains" 
             exact 
             style={link} 
             activeStyle={{background: "darkblue"}}
@@ -30,7 +30,7 @@ const NavBar = (props) => (
         </NavLink>
 
         <NavLink 
-            to="/" 
+            to="/strains/new" 
             exact 
             style={link} 
             activeStyle={{background: "darkblue"}}
