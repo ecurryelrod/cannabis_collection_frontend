@@ -33,7 +33,7 @@ class StrainForm extends Component {
 
     handleOnSubmit = e => {
         e.preventDefault()
-        this.props.createStrain(this.state)
+        this.props.createStrain(this.state, this.props.history)
         // checkboxes do not reset to unchecked after submit, must refresh page...
         this.setState({
             name: "",
@@ -51,9 +51,10 @@ class StrainForm extends Component {
         // debugger
         const types = this.props.types.map(type => <option key={type.attributes.id} value={type.attributes.id}>{type.attributes.name}</option>)
         const effects = this.props.effects.map(effect => (
-            <div className="checkbox" key={effect.attributes.id}>
+            <div key={effect.attributes.id}>
                 <input 
                     id={effect.attributes.id}
+                    className="checkbox"
                     type='checkbox' 
                     value={effect.attributes.id}
                     onChange={this.handleEffectSelect}
