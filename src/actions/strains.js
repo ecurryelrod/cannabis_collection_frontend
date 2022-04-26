@@ -37,7 +37,7 @@ export const fetchStrains = () => {
     }
 }
 
-export const createStrain = (formData) => {
+export const createStrain = (formData, history) => {
     return dispatch => {
         const sendableData = {
             name: formData.name,
@@ -56,7 +56,10 @@ export const createStrain = (formData) => {
             body: JSON.stringify(sendableData)
         })
         .then(resp => resp.json())
-        .then(strains => dispatch(addStrain(strains.data)))
+        .then(strains => {
+            dispatch(addStrain(strains.data))
+            history.push('/strains')
+        })
     }
 }
 
