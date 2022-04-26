@@ -22,15 +22,20 @@ class App extends Component {
         }}>
         <Router>
           <Navbar />
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/strains">
-            <Strains getStrains={this.props.fetchStrains()} />
-          </Route>
-          <Route exact path="/strains/new">
-            <StrainForm getTypes={this.props.fetchTypes()} getEffects={this.props.fetchEffects()} />
-          </Route>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/strains" render={() => <Strains getStrains={this.props.fetchStrains()} />} />
+            <Route exact path="/strains/new" render={({history}) => <StrainForm history={history} getTypes={this.props.fetchTypes()} getEffects={this.props.fetchEffects()} />} />
+            {/* <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/strains">
+              <Strains getStrains={this.props.fetchStrains()} />
+            </Route>
+            <Route exact path="/strains/new">
+              <StrainForm getTypes={this.props.fetchTypes()} getEffects={this.props.fetchEffects()} />
+            </Route> */}
+          </Switch>
         </Router>
         {/* <StrainForm getTypes={this.props.fetchTypes()} getEffects={this.props.fetchEffects()} /> */}
         {/* <Strains getStrains={this.props.fetchStrains()} /> */}
