@@ -37,7 +37,12 @@ ul {
 }
 
 .effects {
-  background-color: aqua;
+  background-color: lightgreen;
+}
+
+.formEffects {
+  background-color: lightgreen;
+
 }
 
 /* .App {
