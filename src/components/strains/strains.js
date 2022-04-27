@@ -1,10 +1,14 @@
 import React, {Component} from "react";
 import { connect } from "react-redux";
 import Strain from "./Strain";
+import { fetchStrains } from "../../actions/strains";
 import { editStrain } from "../../actions/strains";
 import { deleteStrain } from "../../actions/strains";
 
 class Strains extends Component {
+    componentDidMount() {
+        this.props.fetchStrains()
+    }
     render() {
         return (
             <div>
@@ -21,4 +25,4 @@ const mapStateToProps = state => ({
     strains: state.strains
 })
 
-export default connect(mapStateToProps, {editStrain, deleteStrain})(Strains)
+export default connect(mapStateToProps, {fetchStrains, editStrain, deleteStrain})(Strains)
