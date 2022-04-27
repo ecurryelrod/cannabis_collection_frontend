@@ -2,15 +2,21 @@ import React, {Component} from 'react';
 import NewStrainForm from './components/strains/NewStrainForm';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// import { fetchStrains } from './actions/strains';
-// import { fetchTypes } from './actions/types';
-// import { fetchEffects } from './actions/effects';
+import { fetchStrains } from './actions/strains';
+import { fetchTypes } from './actions/types';
+import { fetchEffects } from './actions/effects';
 import Strains from './components/strains/Strains';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import EditStrainForm from './components/strains/EditStrainForm';
 
 class App extends Component {
+  componentDidMount() {
+    this.props.fetchEffects()
+    this.props.fetchStrains()
+    this.props.fetchTypes()
+  }
+
   render() {
     // debugger
     return (
@@ -35,4 +41,4 @@ class App extends Component {
   }
 }
 
-export default connect()(App);
+export default connect(null, {fetchEffects, fetchStrains, fetchTypes})(App);
