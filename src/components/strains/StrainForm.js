@@ -1,8 +1,15 @@
 import React, {Component} from "react";
 import { connect } from "react-redux";
+import { fetchTypes } from "../../actions/types";
+import { fetchEffects } from "../../actions/effects";
 import { createStrain } from "../../actions/strains";
 
 class StrainForm extends Component {
+    componentDidMount() {
+        this.props.fetchEffects()
+        this.props.fetchTypes()
+    }
+
     state = {
         name: "",
         description: "",
@@ -116,7 +123,7 @@ class StrainForm extends Component {
                         onChange={this.handleOnChange}
                     /><br/>
                     <p><strong>Select Effects Experienced:</strong></p>
-                    {effects}
+                    <div className="formEffects">{effects}</div>
                     <br/>
                     <input type="submit" />
                 </form>
@@ -132,4 +139,4 @@ const mapStateToProps = state => ({
     effects: state.effects
 })
 
-export default connect(mapStateToProps, {createStrain})(StrainForm)
+export default connect(mapStateToProps, {fetchEffects, fetchTypes, createStrain})(StrainForm)
