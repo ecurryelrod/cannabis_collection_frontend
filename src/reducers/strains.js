@@ -7,7 +7,9 @@ export const strains = (state = [], action) => {
         
         // delete does not re-render page without deleted strain
         // must refresh page to see update
-        case 'DELETE_STRAIN': return state.filter(strain => strain.id !== action.strainId)
+        case 'DELETE_STRAIN': 
+            // debugger
+            return state.filter(strain => strain.attributes.id !== action.strainId)
 
         default: return state
     }
