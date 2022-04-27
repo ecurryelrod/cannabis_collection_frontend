@@ -17,8 +17,8 @@ class StrainForm extends Component {
         thc_amount: "",
         cbd_amount: "",
         cbg_amount: "",
-        type_id: "",
-        effects: []
+        type_id: "1",
+        effect_ids: []
     }
 
     handleOnChange = e => this.setState({[e.target.name]: e.target.value})
@@ -27,21 +27,20 @@ class StrainForm extends Component {
 
     handleEffectSelect = e => {
         // debugger
-        if (this.state.effects.includes(e.target.value)) {
+        if (this.state.effect_ids.includes(e.target.value)) {
             this.setState((prevState) => {
                 return {
-                    effects: prevState.effects.filter(effect => effect !== e.target.value)
+                    effect_ids: prevState.effect_ids.filter(effect => effect !== e.target.value)
                 }
             })
         } else {
-            this.setState({effects: [...this.state.effects, e.target.value]})
+            this.setState({effect_ids: [...this.state.effect_ids, e.target.value]})
         }
     }
 
     handleOnSubmit = e => {
         e.preventDefault()
         this.props.createStrain(this.state, this.props.history)
-        // checkboxes do not reset to unchecked after submit, must refresh page...
         this.setState({
             name: "",
             description: "",
@@ -50,13 +49,14 @@ class StrainForm extends Component {
             cbd_amount: "",
             cbg_amount: "",
             type_id: "",
-            effects: []
+            effect_ids: []
         })
     }
 
     render() {
         // debugger
         const types = this.props.types.map(type => <option key={type.attributes.id} value={type.attributes.id}>{type.attributes.name}</option>)
+       
         const effects = this.props.effects.map(effect => (
             <div key={effect.attributes.id}>
                 <input 
@@ -76,7 +76,7 @@ class StrainForm extends Component {
                 <form onSubmit={this.handleOnSubmit}>
                     <p>
                         <strong>Select Strain Type: </strong>
-                        <select  onChange={this.handleTypeSelect}>
+                        <select value={this.state.type_id} onChange={this.handleTypeSelect}>
                             {types}
                         </select><br/>
                     </p>
@@ -128,7 +128,7 @@ class StrainForm extends Component {
                     <input type="submit" />
                 </form>
                 {/* {this.state.name} */}
-                {/* {console.log(this.state)} */}
+                {console.log(this.state)}
             </div>
         )
     }
