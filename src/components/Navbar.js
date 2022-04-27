@@ -5,8 +5,9 @@ const link = {
     width: "100px",
     padding: "12px",
     margin: "1em",
-    textDecoration: "blue",
-    color: "white"
+    background: "lightgreen",
+    textDecoration: "none",
+    color: "black"
 }
 
 const NavBar = (props) => (
@@ -15,7 +16,7 @@ const NavBar = (props) => (
             to="/" 
             exact 
             style={link} 
-            activeStyle={{background: "darkblue"}}
+            activeStyle={{background: "green", color: "white"}}
         >
             Home
         </NavLink>
@@ -24,7 +25,7 @@ const NavBar = (props) => (
             to="/strains" 
             exact 
             style={link} 
-            activeStyle={{background: "darkblue"}}
+            activeStyle={{background: "green", color: "white"}}
         >
             Strains
         </NavLink>
@@ -33,7 +34,7 @@ const NavBar = (props) => (
             to="/strains/new" 
             exact 
             style={link} 
-            activeStyle={{background: "darkblue"}}
+            activeStyle={{background: "green", color: "white"}}
         >
             Create a New Strain
         </NavLink>

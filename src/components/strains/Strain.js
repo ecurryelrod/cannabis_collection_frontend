@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Strain = props => {
     return (
@@ -15,7 +16,7 @@ const Strain = props => {
                 {props.strain.effects.map(effect => <div key={effect.id}>{effect.name}</div>)}
             </div>
             <button onClick={() => props.delete(props.strain.id)}>Delete</button>
-            <button onClick={() => props.edit(props.strain)}>Edit</button>
+            <button><Link to={`/strains/${props.strain.id}/edit`}>Edit</Link></button>
         </div>
     )
 }
