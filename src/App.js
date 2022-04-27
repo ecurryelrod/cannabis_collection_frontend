@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Strains from './components/strains/Strains';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
+import EditStrainForm from './components/strains/EditStrainForm';
 
 class App extends Component {
   render() {
@@ -26,6 +27,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/strains" component={Strains} />
             <Route exact path="/strains/new" component={NewStrainForm} />
+            <Route exact path="/strains/:id/edit" component={EditStrainForm} />
           </Switch>
         </Router>
       </div>
