@@ -33,7 +33,16 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/strains" component={Strains} />
             <Route exact path="/strains/new" component={NewStrainForm} />
-            <Route exact path="/strains/:id/edit" component={EditStrainForm} />
+            <Route exact path="/strains/:id/edit" render={props => {
+              const strain = this.props.strains.find(strain => strain.id === props.match.params.id)
+              // debugger
+              return <EditStrainForm 
+                strain={strain} 
+                strainEffects={strain.attributes.effects} 
+                strainType={strain.attributes.type.id}
+                {...props} 
+              />
+            }} />
           </Switch>
         </Router>
       </div>
@@ -41,4 +50,8 @@ class App extends Component {
   }
 }
 
-export default connect(null, {fetchEffects, fetchStrains, fetchTypes})(App);
+const mapStateToProps = state => ({
+  strains: state.strains
+})
+
+export default connect(mapStateToProps, {fetchEffects, fetchStrains, fetchTypes})(App);
