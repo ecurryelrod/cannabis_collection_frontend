@@ -13,6 +13,13 @@ export const addStrain = strain => {
     }
 }
 
+export const updatedStrain = strain => {
+    return {
+        type: 'UPDATE_STRAIN',
+        strain
+    }
+}
+
 export const strainDeleted = strainId => {
     // debugger
     return {
@@ -47,7 +54,7 @@ export const createStrain = (formData, history) => {
             cbd_amount: formData.cbd_amount,
             cbg_amount: formData.cbg_amount,
             type_id: formData.type_id,
-            effect_ids: formData.effects
+            effect_ids: formData.effect_ids
         }
 
         fetch('http://127.0.0.1:3000/api/v1/strains', {
@@ -63,10 +70,28 @@ export const createStrain = (formData, history) => {
     }
 }
 
-export const editStrain = (strain) => {
-    debugger
+export const editStrain = (strainData, history) => {
+    const strainDataForUpdate = {
+        name: strainData.name,
+        description: strainData.description,
+        terpene: strainData.terpene,
+        thc_amount: strainData.thc_amount,
+        cbd_amount: strainData.cbd_amount,
+        cbg_amount: strainData.cbg_amount,
+        type_id: strainData.type_id,
+        effect_ids: strainData.effect_ids
+    }
     return dispatch => {
-        
+        fetch(`http://127.0.0.1:3000/api/v1/strains/${strainData.id}`, {
+            method: 'PATCH',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(strainDataForUpdate)
+        })
+        .then(resp => resp.json())
+        .then(strain => {
+            dispatch(updatedStrain(strain.data))
+            history.push('/strains')
+        })
     }
 }
 
