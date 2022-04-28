@@ -2,18 +2,27 @@ import React, {Component} from "react";
 import { connect } from "react-redux";
 
 class EditStrainForm extends Component {
-    handleOnChange = e => {
-
-    }
+    handleOnChange = e => {}
 
     handleOnSubmit = e => {
         e.preventDefault()
     }
 
     render() {
-        const strain = this.props.strains.find(strain => strain.id === this.props.match.params.id)
-        
-        const types = this.props.types.map(type => <option key={type.attributes.id} value={type.attributes.id}>{type.attributes.name}</option>)
+        const { strain, strainType, strainEffects } = this.props
+
+        const types = this.props.types.map(type => {
+            // debugger
+            // if (type.id === strainType) {
+            return <option 
+                    key={type.attributes.id} 
+                    value={type.attributes.id}
+                >
+                    {type.attributes.name}
+                </option>
+            // }
+            // return <option key={type.attributes.id} value={type.attributes.id}>{type.attributes.name}</option>
+        })
        
         const effects = this.props.effects.map(effect => (
             <div key={effect.attributes.id}>
@@ -30,15 +39,17 @@ class EditStrainForm extends Component {
         return (
             <div>
                 <h2>Edit {strain.attributes.name} Strain</h2>
-                <p>
-                    <strong>Edit Strain Type: </strong>
-                    <select 
-                        value={strain.attributes.type_id} 
-                    >
-                        {types}
-                    </select><br/>
-                </p>
+
                 <form onSubmit={this.handleOnSubmit}>
+                    <p>
+                        <strong>Edit Strain Type: </strong>
+                        <select 
+                            defaultValue={strainType}
+                            value={strain.attributes.type_id} 
+                        >
+                            {types}
+                        </select><br/>
+                    </p>
                     <input 
                         type="text"
                         name="name"
