@@ -23,8 +23,6 @@ class StrainForm extends Component {
 
     handleOnChange = e => this.setState({[e.target.name]: e.target.value})
 
-    handleTypeSelect = e => this.setState({type_id: e.target.value})
-
     handleEffectSelect = e => {
         // debugger
         if (this.state.effect_ids.includes(e.target.value)) {
@@ -76,7 +74,7 @@ class StrainForm extends Component {
                 <form onSubmit={this.handleOnSubmit}>
                     <p>
                         <strong>Select Strain Type: </strong>
-                        <select value={this.state.type_id} onChange={this.handleTypeSelect}>
+                        <select name="type_id" value={this.state.type_id} onChange={this.handleOnChange}>
                             {types}
                         </select><br/>
                     </p>
