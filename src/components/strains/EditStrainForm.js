@@ -1,8 +1,10 @@
 import React, {Component} from "react";
 import { connect } from "react-redux";
+import { editStrain } from "../../actions/strains";
 
 class EditStrainForm extends Component {
     state = {
+        id: this.props.strain.attributes.id,
         name: this.props.strain.attributes.name,
         description: this.props.strain.attributes.description,
         terpene: this.props.strain.attributes.terpene,
@@ -10,17 +12,27 @@ class EditStrainForm extends Component {
         cbd_amount: this.props.strain.attributes.cbd_amount,
         cbg_amount: this.props.strain.attributes.cbg_amount,
         type_id: this.props.strain.attributes.type.id,
-        effect_ids: this.props.strain.attributes.effects
+        effect_ids: this.props.strainEffects
     }
 
     handleOnChange = e => this.setState({[e.target.name]: e.target.value})
 
     handleCheckedEffects = e => {
-        debugger
+        // debugger
+        if (this.state.effect_ids.includes(e.target.value)) {
+            this.setState((prevState) => {
+                return {
+                    effect_ids: prevState.effect_ids.filter(effect => effect !== e.target.value)
+                }
+            })
+        } else {
+            this.setState({effect_ids: [...this.state.effect_ids, e.target.value]})
+        }
     }
 
     handleOnSubmit = e => {
         e.preventDefault()
+        this.props.editStrain(this.state, this.props.history)
     }
 
     render() {
@@ -43,8 +55,8 @@ class EditStrainForm extends Component {
                     className="checkbox"
                     type='checkbox' 
                     value={effect.attributes.id}
-                    // onChange={this.handleCheckedEffects}
-                    // defaultChecked={this.handleCheckedEffects(strainEffects)}
+                    onChange={this.handleCheckedEffects}
+                    
                 />
                 <label>{effect.attributes.name}</label>
             </div>
@@ -54,7 +66,7 @@ class EditStrainForm extends Component {
         
         return (
             <div>
-                <h2>Edit {this.state.name} Strain</h2>
+                <h2>Edit Strain</h2>
 
                 <form onSubmit={this.handleOnSubmit}>
                     <p>
@@ -104,10 +116,9 @@ class EditStrainForm extends Component {
                         onChange={this.handleOnChange}
                     /><br/>
                     <p><strong>Edit Effects Experienced:</strong></p>
-                    <div className="formEffects">{effects}</div>
+                    <div className="formEffects">{effects}</div><br/>
                     <input type="submit" />
                 </form>
-                {this.state.name}
                 {console.log(this.state)}
             </div>
         )
@@ -120,4 +131,4 @@ const mapStateToProps = state => ({
     effects: state.effects
 })
 
-export default connect(mapStateToProps)(EditStrainForm)
+export default connect(mapStateToProps, {editStrain})(EditStrainForm)
