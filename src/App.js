@@ -38,7 +38,7 @@ class App extends Component {
               // debugger
               return <EditStrainForm 
                 strain={strain} 
-                strainEffects={strain.attributes.effects.map(effect => effect.id)} 
+                strainEffects={strain.attributes.effects.map(effect => effect.id.toString())} 
                 strainType={strain.attributes.type.id}
                 {...props} 
               />

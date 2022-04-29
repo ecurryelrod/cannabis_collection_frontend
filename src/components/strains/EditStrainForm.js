@@ -20,6 +20,7 @@ class EditStrainForm extends Component {
     handleCheckedEffects = e => {
         // debugger
         if (this.state.effect_ids.includes(e.target.value)) {
+            // can i somehow set the default checked attrib here???
             this.setState((prevState) => {
                 return {
                     effect_ids: prevState.effect_ids.filter(effect => effect !== e.target.value)
@@ -28,6 +29,11 @@ class EditStrainForm extends Component {
         } else {
             this.setState({effect_ids: [...this.state.effect_ids, e.target.value]})
         }
+    }
+
+    defaultChecked = () => {
+        // if the effect_id from comp state === the effect.id from redux state, then checked should be true / auto checked
+        // else checked attribute should be false / not checked
     }
 
     handleOnSubmit = e => {
@@ -48,6 +54,7 @@ class EditStrainForm extends Component {
         })
        
         const effects = this.props.effects.map(effect => {
+            
             return (
             <div key={effect.attributes.id}>
                 <input 
@@ -56,7 +63,6 @@ class EditStrainForm extends Component {
                     type='checkbox' 
                     value={effect.attributes.id}
                     onChange={this.handleCheckedEffects}
-                    
                 />
                 <label>{effect.attributes.name}</label>
             </div>
