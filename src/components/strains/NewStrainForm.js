@@ -1,15 +1,8 @@
 import React, {Component} from "react";
 import { connect } from "react-redux";
-// import { fetchTypes } from "../../actions/types";
-// import { fetchEffects } from "../../actions/effects";
 import { createStrain } from "../../actions/strains";
 
 class StrainForm extends Component {
-    // componentDidMount() {
-    //     this.props.fetchEffects()
-    //     this.props.fetchTypes()
-    // }
-
     state = {
         name: "",
         description: "",
@@ -24,7 +17,6 @@ class StrainForm extends Component {
     handleOnChange = e => this.setState({[e.target.name]: e.target.value})
 
     handleEffectSelect = e => {
-        // debugger
         if (this.state.effect_ids.includes(e.target.value)) {
             this.setState((prevState) => {
                 return {
@@ -67,7 +59,7 @@ class StrainForm extends Component {
 
         return (
             <div>
-                <h2>Add a New Strain</h2>
+                <h2>Add a New Experience</h2>
                 <form className="form" onSubmit={this.handleOnSubmit}>
                     <p>
                         <strong>Select Strain Type: </strong>
@@ -92,14 +84,6 @@ class StrainForm extends Component {
                         cols="20"
                         rows="3"
                     ></textarea><br/><br/>
-                    {/* <input 
-                        className="formInput"
-                        type="text"
-                        name="description" 
-                        placeholder="description"
-                        value={this.state.description} 
-                        onChange={this.handleOnChange}
-                    /><br/> */}
                     <input 
                         className="formInput"
                         type="text"
@@ -137,8 +121,6 @@ class StrainForm extends Component {
                     <br/>
                     <input className="button" type="submit" />
                 </form>
-                {/* {this.state.name} */}
-                {console.log(this.state)}
             </div>
         )
     }
