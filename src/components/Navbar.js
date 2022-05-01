@@ -7,10 +7,11 @@ const link = {
     margin: "1em",
     background: "lightgreen",
     textDecoration: "none",
-    color: "black"
+    color: "black",
+    borderRadius: "10px"
 }
 
-const NavBar = (props) => (
+const NavBar = () => (
     <>
         <NavLink 
             to="/" 
