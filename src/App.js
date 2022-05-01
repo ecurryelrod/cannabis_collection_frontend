@@ -20,13 +20,7 @@ class App extends Component {
   render() {
     // debugger
     return (
-      <div className="App" style={{
-          backgroundImage: "url(/weedPic.png)",
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          width: '100vw',
-          height: '100vh'
-        }}>
+      <div className="App">
         <Router>
           <Navbar />
           <Switch>
