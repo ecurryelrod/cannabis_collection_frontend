@@ -96,7 +96,7 @@ class StrainForm extends Component {
                         className="formInput"
                         type="number"
                         name="thc_amount" 
-                        placeholder="THC Amount" 
+                        placeholder="THC Amount (mg)" 
                         value={this.state.thc_amount}
                         onChange={this.handleOnChange}
                     />
@@ -104,7 +104,7 @@ class StrainForm extends Component {
                         className="formInput"
                         type="number"
                         name="cbd_amount" 
-                        placeholder="CBD Amount" 
+                        placeholder="CBD Amount (mg)" 
                         value={this.state.cbd_amount}
                         onChange={this.handleOnChange}
                     />
@@ -112,7 +112,7 @@ class StrainForm extends Component {
                         className="formInput"
                         type="number"
                         name="cbg_amount" 
-                        placeholder="CBG Amount" 
+                        placeholder="CBG Amount (mg)" 
                         value={this.state.cbg_amount}
                         onChange={this.handleOnChange}
                     /><br/>
