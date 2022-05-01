@@ -48,10 +48,9 @@ class EditStrainForm extends Component {
         const effects = this.props.effects.map(effect => {
             
             return (
-            <div key={effect.attributes.id}>
+            <div className="effects" key={effect.attributes.id}>
                 <input 
                     id={effect.attributes.id}
-                    className="checkbox"
                     type='checkbox' 
                     value={effect.attributes.id}
                     checked={this.state.effect_ids.includes(effect.id)}
@@ -67,7 +66,7 @@ class EditStrainForm extends Component {
             <div>
                 <h2>Edit Strain</h2>
 
-                <form onSubmit={this.handleOnSubmit}>
+                <form className="form" onSubmit={this.handleOnSubmit}>
                     <p>
                         <strong>Edit Strain Type: </strong>
                         <select 
@@ -79,36 +78,49 @@ class EditStrainForm extends Component {
                         </select><br/>
                     </p>
                     <input 
+                        className="formInput"
                         type="text"
                         name="name"
                         value={this.state.name}
                         onChange={this.handleOnChange}
-                    /><br/>
-                    <input 
+                    /><br/><br/>
+                    <textarea
                         type="text"
                         name="description"
                         value={this.state.description}
                         onChange={this.handleOnChange}
-                    /><br/>
+                        cols="20"
+                        rows="3"
+                    ></textarea><br/><br/>
+                    {/* <input 
+                        type="text"
+                        name="description"
+                        value={this.state.description}
+                        onChange={this.handleOnChange}
+                    /><br/> */}
                     <input 
+                        className="formInput"
                         type="text"
                         name="terpene"
                         value={this.state.terpene}
                         onChange={this.handleOnChange}
-                    /><br/>
+                    /><br/><br/>
                     <input 
+                        className="formInput"
                         type="text"
                         name="thc_amount"
                         value={this.state.thc_amount}
                         onChange={this.handleOnChange}
-                    /><br/>
+                    />
                     <input 
+                        className="formInput"
                         type="text"
                         name="cbd_amount"
                         value={this.state.cbd_amount}
                         onChange={this.handleOnChange}
-                    /><br/>
+                    />
                     <input 
+                        className="formInput"
                         type="text"
                         name="cbg_amount"
                         value={this.state.cbg_amount}
@@ -116,7 +128,7 @@ class EditStrainForm extends Component {
                     /><br/>
                     <p><strong>Edit Effects Experienced:</strong></p>
                     <div className="formEffects">{effects}</div><br/>
-                    <input type="submit" />
+                    <input className="button" type="submit" />
                 </form>
             </div>
         )

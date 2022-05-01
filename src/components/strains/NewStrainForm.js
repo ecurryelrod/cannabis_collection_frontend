@@ -58,7 +58,6 @@ class StrainForm extends Component {
             <div className="effects" key={effect.attributes.id}>
                 <input 
                     id={effect.attributes.id}
-                    className="checkbox"
                     type='checkbox' 
                     value={effect.attributes.id}
                     onChange={this.handleEffectSelect}
