@@ -19,7 +19,6 @@ class EditStrainForm extends Component {
 
     handleCheckedEffects = e => {
         if (this.state.effect_ids.includes(e.target.value)) {
-            // can i somehow set the default checked attrib here???
             this.setState((prevState) => {
                 return {
                     effect_ids: prevState.effect_ids.filter(effect => effect !== e.target.value)
@@ -64,7 +63,7 @@ class EditStrainForm extends Component {
         
         return (
             <div>
-                <h2>Edit Strain</h2>
+                <h2>Edit the Experience</h2>
 
                 <form className="form" onSubmit={this.handleOnSubmit}>
                     <p>
@@ -92,12 +91,6 @@ class EditStrainForm extends Component {
                         cols="20"
                         rows="3"
                     ></textarea><br/><br/>
-                    {/* <input 
-                        type="text"
-                        name="description"
-                        value={this.state.description}
-                        onChange={this.handleOnChange}
-                    /><br/> */}
                     <input 
                         className="formInput"
                         type="text"
@@ -105,20 +98,23 @@ class EditStrainForm extends Component {
                         value={this.state.terpene}
                         onChange={this.handleOnChange}
                     /><br/><br/>
+                    THC Amount (mg)
                     <input 
                         className="formInput"
                         type="text"
                         name="thc_amount"
                         value={this.state.thc_amount}
                         onChange={this.handleOnChange}
-                    />
+                    /><br/>
+                    CBD Amount (mg)
                     <input 
                         className="formInput"
                         type="text"
                         name="cbd_amount"
                         value={this.state.cbd_amount}
                         onChange={this.handleOnChange}
-                    />
+                    /><br/>
+                    CBG Amount (mg)
                     <input 
                         className="formInput"
                         type="text"
