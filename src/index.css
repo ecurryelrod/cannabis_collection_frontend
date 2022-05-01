@@ -12,6 +12,37 @@ code {
     monospace;
 }
 
+.strainBox {
+  border: 5px solid darkgreen;
+  width: 200px;
+  margin: 5px;
+  padding: 5px;
+  float: left;
+  background-color: lightgreen;
+}
+
+.form {
+  border: 5px solid darkgreen;
+  border-radius: 20px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  background-color: lightgreen;
+}
+
+.formInput {
+  border: 2px solid darkgreen;
+  border-radius: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+textarea {
+  border: 2px solid darkgreen;
+  border-radius: 5px;
+}
+
 h1 {
   color: white;
 }
@@ -25,30 +56,29 @@ h3 {
 }
 
 p {
-  color: white;
+  color: black;
 }
 
 .checkbox {
-  color: white;
+  display: inline;
 }
 
 ul {
   color: white;
 }
 
+.button {
+  border-radius: 5px;
+  margin: 5px;
+  background-color: darkgreen;
+  color: white;
+  padding: 5px 10px;
+}
+
 .effects {
-  background-color: lightgreen;
+  display: inline-flex;
+  /* padding: 3px; */
+  margin: 5px;
 }
 
-.formEffects {
-  background-color: lightgreen;
 
-}
-
-/* .App {
-  background-image: "url(/weedPic.png)";
-  background-position: 'center';
-  background-size: 'cover';
-  width: '100vw';
-  height: '100vh';
-} */
