@@ -7,7 +7,10 @@ export const strains = (state = {addedStrains: [], filteredStrains: []}, action)
             }
 
         case 'ADD_STRAIN': 
-            return {addedStrains: [...state.addedStrains, action.strain]}
+            return {
+                addedStrains: [...state.addedStrains, action.strain],
+                filteredStrains: [...state.filteredStrains, action.strain]
+            }
 
         case 'FILTER_STRAINS':
             let filteredStrains
