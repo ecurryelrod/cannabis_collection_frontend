@@ -32,7 +32,8 @@ class Strains extends Component {
 
                 <h2>Experiences to Remember</h2>
                 <div className="strainContainer">
-                    {this.props.strains.addedStrains.map(strain => 
+                    {/* {this.props.strains.addedStrains.map(strain =>  */}
+                    {this.props.strains.filteredStrains.map(strain => 
                         <Strain 
                             key={strain.id} 
                             strain={strain.attributes} 

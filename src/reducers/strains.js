@@ -1,16 +1,21 @@
-export const strains = (state = {addedStrains: []}, action) => {
+export const strains = (state = {addedStrains: [], filteredStrains: []}, action) => {
     switch (action.type) {
         case 'SET_STRAINS': 
-        // debugger
-            return {addedStrains: action.strains}
+            return {
+                addedStrains: action.strains, 
+                filteredStrains: action.strains
+            }
 
         case 'ADD_STRAIN': 
             return {addedStrains: [...state.addedStrains, action.strain]}
 
         case 'FILTER_STRAINS':
-            let filteredStrains = state.addedStrains.filter(strain => strain.attributes.type.name === action.strainType)
-            // debugger
-            // return {addedStrains: filteredStrains}
+            let filteredStrains
+            if (action.strainType) {
+                filteredStrains = state.addedStrains.filter(strain => strain.attributes.type.name === action.strainType)
+            } else{
+                filteredStrains = state.addedStrains
+            }
             return {...state, filteredStrains}
         
         case 'UPDATE_STRAIN': 
