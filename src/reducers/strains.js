@@ -7,8 +7,11 @@ export const strains = (state = [], action) => {
             return [...state, action.strain]
 
         case 'FILTER_STRAINS':
-            debugger
-            return 
+            // debugger
+            return state.filter(strain => {
+                // debugger
+                return strain.attributes.type.name === action.strainType
+            }) 
         
         case 'UPDATE_STRAIN': 
             return state.map(strain => strain.attributes.id === action.strain.attributes.id ? action.strain : strain)
