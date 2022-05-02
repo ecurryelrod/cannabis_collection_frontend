@@ -23,11 +23,17 @@ export const strains = (state = {addedStrains: [], filteredStrains: []}, action)
         
         case 'UPDATE_STRAIN': 
             let updatedStrains = state.addedStrains.map(strain => strain.attributes.id === action.strain.attributes.id ? action.strain : strain)
-            return {addedStrains: updatedStrains}
+            return {
+                addedStrains: updatedStrains,
+                filteredStrains: updatedStrains
+            }
          
         case 'DELETE_STRAIN': 
             let remainingStrains = state.addedStrains.filter(strain => strain.attributes.id !== action.strainId)
-            return {addedStrains: remainingStrains}
+            return {
+                addedStrains: remainingStrains,
+                filteredStrains: remainingStrains
+            }
 
         default: return state
     }
