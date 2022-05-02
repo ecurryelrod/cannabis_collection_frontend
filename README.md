@@ -1,4 +1,4 @@
-# Cannabis Collection
+# Cannabis Collection Frontend
 link to backend repo https://github.com/ecurryelrod/cannabis_collection_backend
 
 ## Description
