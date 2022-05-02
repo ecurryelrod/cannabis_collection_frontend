@@ -26,12 +26,13 @@ class Strains extends Component {
             <div>
                 <h3>Filter by type</h3>
                 <select onChange={this.handleFilterByType}>
+                    <option value="">Select a type...</option>
                     {types}
                 </select>
 
                 <h2>Experiences to Remember</h2>
                 <div className="strainContainer">
-                    {this.props.strains.map(strain => 
+                    {this.props.strains.addedStrains.map(strain => 
                         <Strain 
                             key={strain.id} 
                             strain={strain.attributes} 
@@ -46,7 +47,7 @@ class Strains extends Component {
 }
 
 const mapStateToProps = state => ({
-    strains: state.strains.addedStrains,
+    strains: state.strains,
     types: state.types
 })
 
