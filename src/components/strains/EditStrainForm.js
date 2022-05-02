@@ -45,19 +45,17 @@ class EditStrainForm extends Component {
         })
        
         const effects = this.props.effects.map(effect => {
-            
             return (
-            <div className="effects" key={effect.attributes.id}>
-                <input 
-                    id={effect.attributes.id}
-                    type='checkbox' 
-                    value={effect.attributes.id}
-                    checked={this.state.effect_ids.includes(effect.id)}
-                    onChange={this.handleCheckedEffects}
-                />
-                <label>{effect.attributes.name}</label>
-            </div>
-
+                <div className="effects" key={effect.attributes.id}>
+                    <input 
+                        id={effect.attributes.id}
+                        type='checkbox' 
+                        value={effect.attributes.id}
+                        checked={this.state.effect_ids.includes(effect.id)}
+                        onChange={this.handleCheckedEffects}
+                    />
+                    <label>{effect.attributes.name}</label>
+                </div>
             )
         })
         
