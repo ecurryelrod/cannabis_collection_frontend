@@ -46,7 +46,7 @@ class Strains extends Component {
 }
 
 const mapStateToProps = state => ({
-    strains: state.strains,
+    strains: state.strains.addedStrains,
     types: state.types
 })
 

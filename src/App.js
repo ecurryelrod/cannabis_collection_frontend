@@ -45,7 +45,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  strains: state.strains
+  strains: state.strains.addedStrains
 })
 
 export default connect(mapStateToProps, {fetchEffects, fetchStrains, fetchTypes})(App);
