@@ -5,6 +5,10 @@ export const strains = (state = [], action) => {
 
         case 'ADD_STRAIN': 
             return [...state, action.strain]
+
+        case 'FILTER_STRAINS':
+            debugger
+            return 
         
         case 'UPDATE_STRAIN': 
             return state.map(strain => strain.attributes.id === action.strain.attributes.id ? action.strain : strain)

@@ -14,7 +14,10 @@ export const addStrain = strain => {
 }
 
 export const filterStrains = (strainType) => {
-    debugger
+    return {
+        type: 'FILTER_STRAINS',
+        strainType
+    }
 }
 
 export const updatedStrain = strain => {
