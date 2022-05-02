@@ -10,10 +10,12 @@ export const strains = (state = {addedStrains: []}, action) => {
         case 'FILTER_STRAINS':
             let filteredStrains = state.addedStrains.filter(strain => strain.attributes.type.name === action.strainType)
             // debugger
+            // return {addedStrains: filteredStrains}
             return {...state, filteredStrains}
         
         case 'UPDATE_STRAIN': 
-            return state.map(strain => strain.attributes.id === action.strain.attributes.id ? action.strain : strain)
+            let updatedStrain = state.addedStrains.map(strain => strain.attributes.id === action.strain.attributes.id ? action.strain : strain)
+            return {addedStrains: updatedStrain}
          
         case 'DELETE_STRAIN': 
             return state.filter(strain => strain.attributes.id !== action.strainId)

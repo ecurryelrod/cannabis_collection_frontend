@@ -28,8 +28,8 @@ class App extends Component {
             <Route exact path="/strains" component={Strains} />
             <Route exact path="/strains/new" component={NewStrainForm} />
             <Route exact path="/strains/:id/edit" render={props => {
-              const strain = this.props.strains.find(strain => strain.id === props.match.params.id)
-              // debugger
+              const strain = this.props.strains.addedStrains.find(strain => strain.id === props.match.params.id)
+              
               return <EditStrainForm 
                 strain={strain} 
                 strainEffects={strain.attributes.effects.map(effect => effect.id.toString())} 
