@@ -26,7 +26,7 @@ class Strains extends Component {
             <div>
                 <h3>Filter by type</h3>
                 <select onChange={this.handleFilterByType}>
-                    <option value="">Select a type...</option>
+                    <option value="">All Strains</option>
                     {types}
                 </select>
 
