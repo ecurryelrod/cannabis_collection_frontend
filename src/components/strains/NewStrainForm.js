@@ -117,7 +117,7 @@ class StrainForm extends Component {
                         onChange={this.handleOnChange}
                     /><br/>
                     <p><strong>Select Effects Experienced:</strong></p>
-                    <div className="formEffects">{effects}</div>
+                    <div>{effects}</div>
                     <br/>
                     <input className="button" type="submit" />
                 </form>

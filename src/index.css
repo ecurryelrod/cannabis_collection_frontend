@@ -28,6 +28,7 @@ code {
   padding: 5px;
   float: left;
   background-color: lightgreen;
+  opacity: 0.8;
 }
 
 .form {
@@ -38,6 +39,7 @@ code {
   margin-right: auto;
   padding: 10px;
   background-color: lightgreen;
+  opacity: 0.8;
 }
 
 .formInput {
@@ -62,10 +64,6 @@ h2 {
 
 h3 {
   color: white;
-}
-
-p {
-  color: black;
 }
 
 .button {

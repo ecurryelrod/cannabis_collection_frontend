@@ -123,7 +123,7 @@ class EditStrainForm extends Component {
                         onChange={this.handleOnChange}
                     /><br/>
                     <p><strong>Edit Effects Experienced:</strong></p>
-                    <div className="formEffects">{effects}</div><br/>
+                    <div>{effects}</div><br/>
                     <input className="button" type="submit" />
                 </form>
             </div>

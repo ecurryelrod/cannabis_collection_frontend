@@ -8,7 +8,7 @@ class Strains extends Component {
     render() {
         return (
             <div>
-                <h2>Experiences / Rides</h2>
+                <h2>Experiences to Remember</h2>
                 <div className="strainContainer">
                     {this.props.strains.map(strain => 
                         <Strain 
