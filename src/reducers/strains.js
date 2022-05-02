@@ -5,7 +5,7 @@ export const strains = (state = {addedStrains: []}, action) => {
             return {addedStrains: action.strains}
 
         case 'ADD_STRAIN': 
-            return [...state, action.strain]
+            return {addedStrains: [...state.addedStrains, action.strain]}
 
         case 'FILTER_STRAINS':
             let filteredStrains = state.addedStrains.filter(strain => strain.attributes.type.name === action.strainType)
@@ -14,12 +14,12 @@ export const strains = (state = {addedStrains: []}, action) => {
             return {...state, filteredStrains}
         
         case 'UPDATE_STRAIN': 
-            let updatedStrain = state.addedStrains.map(strain => strain.attributes.id === action.strain.attributes.id ? action.strain : strain)
-            return {addedStrains: updatedStrain}
+            let updatedStrains = state.addedStrains.map(strain => strain.attributes.id === action.strain.attributes.id ? action.strain : strain)
+            return {addedStrains: updatedStrains}
          
         case 'DELETE_STRAIN': 
-            let availableStrains = state.addedStrains.filter(strain => strain.attributes.id !== action.strainId)
-            return {addedStrains: availableStrains}
+            let remainingStrains = state.addedStrains.filter(strain => strain.attributes.id !== action.strainId)
+            return {addedStrains: remainingStrains}
 
         default: return state
     }
