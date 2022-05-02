@@ -18,7 +18,8 @@ export const strains = (state = {addedStrains: []}, action) => {
             return {addedStrains: updatedStrain}
          
         case 'DELETE_STRAIN': 
-            return state.filter(strain => strain.attributes.id !== action.strainId)
+            let availableStrains = state.addedStrains.filter(strain => strain.attributes.id !== action.strainId)
+            return {addedStrains: availableStrains}
 
         default: return state
     }
