@@ -44,7 +44,14 @@ class StrainForm extends Component {
     }
 
     render() {
-        const types = this.props.types.map(type => <option key={type.attributes.id} value={type.attributes.id}>{type.attributes.name}</option>)
+        const types = this.props.types.map(type => (
+            <option 
+                key={type.attributes.id} 
+                value={type.attributes.id}
+            >
+                {type.attributes.name}
+            </option>
+        ))
        
         const effects = this.props.effects.map(effect => (
             <div className="effects" key={effect.attributes.id}>
