@@ -17,6 +17,6 @@ The app is available as open source under the terms of the [MIT License](https:/
 ## Further Information:
 
 Project demo:
-[Video Walkthrough]()
+[Video Walkthrough](https://www.youtube.com/watch?v=I_8K8i1Ubhw&t=32s)
 
 [Associated Blog]()
