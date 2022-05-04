@@ -28,7 +28,6 @@ export const updatedStrain = strain => {
 }
 
 export const strainDeleted = strainId => {
-    // debugger
     return {
         type: 'DELETE_STRAIN',
         strainId
@@ -37,7 +36,6 @@ export const strainDeleted = strainId => {
 
 // asynchronous actions
 export const fetchStrains = () => {
-    // debugger
     return dispatch => {
         fetch('http://127.0.0.1:3000/api/v1/strains')
         .then(resp => resp.json())
@@ -103,13 +101,11 @@ export const editStrain = (strainData, history) => {
 }
 
 export const deleteStrain = strainId => {
-    // debugger
     return dispatch =>  {
         fetch(`http://127.0.0.1:3000/api/v1/strains/${strainId}`, {
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'}
         })
         .then(resp => dispatch(strainDeleted(strainId)))
-        // .then(json => {debugger})
     }
 }

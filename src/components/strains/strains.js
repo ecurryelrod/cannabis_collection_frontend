@@ -6,13 +6,11 @@ import { editStrain } from "../../actions/strains";
 import { deleteStrain } from "../../actions/strains";
 
 class Strains extends Component {
-    // want to filter strains by type
     handleFilterByType = e => {
         this.props.filterStrains(e.target.value)
     }
 
     render() {
-        // debugger
         const types = this.props.types.map(type => (
             <option
                 key={type.attributes.id}
