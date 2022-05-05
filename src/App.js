@@ -22,6 +22,7 @@ class App extends Component {
       <div className="App">
         <Router>
           <Navbar />
+          {/* Switch comp makes sure only one route matches at the same time */}
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/strains" component={Strains} />

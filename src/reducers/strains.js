@@ -16,7 +16,7 @@ export const strains = (state = {addedStrains: [], filteredStrains: []}, action)
             let filteredStrains
             if (action.strainType) {
                 filteredStrains = state.addedStrains.filter(strain => strain.attributes.type.name === action.strainType)
-            } else{
+            } else {
                 filteredStrains = state.addedStrains
             }
             return {...state, filteredStrains}

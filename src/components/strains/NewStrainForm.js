@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import { connect } from "react-redux";
 import { createStrain } from "../../actions/strains";
 
-class StrainForm extends Component {
+class NewStrainForm extends Component {
     state = {
         name: "",
         description: "",
@@ -138,4 +138,4 @@ const mapStateToProps = state => ({
     effects: state.effects
 })
 
-export default connect(mapStateToProps, {createStrain})(StrainForm)
+export default connect(mapStateToProps, {createStrain})(NewStrainForm)

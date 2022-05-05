@@ -21,10 +21,12 @@ class EditStrainForm extends Component {
         if (this.state.effect_ids.includes(e.target.value)) {
             this.setState((prevState) => {
                 return {
+                    // unchecking the checkbox removes the effect id from effect_ids state array
                     effect_ids: prevState.effect_ids.filter(effect => effect !== e.target.value)
                 }
             })
         } else {
+            // checking checkbox adds the effect id to the effect_ids state array
             this.setState({effect_ids: [...this.state.effect_ids, e.target.value]})
         }
     }
@@ -130,7 +132,7 @@ class EditStrainForm extends Component {
 }
 
 const mapStateToProps = state => ({
-    strains: state.strains,
+    // strains: state.strains,
     types: state.types,
     effects: state.effects
 })
