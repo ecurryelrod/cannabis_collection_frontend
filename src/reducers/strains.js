@@ -14,7 +14,7 @@ export const strains = (state = {addedStrains: [], filteredStrains: []}, action)
 
         case 'FILTER_STRAINS':
             let filteredStrains
-            if (action.strainType) {
+            if (action.strainType !== "All") {
                 filteredStrains = state.addedStrains.filter(strain => strain.attributes.type.name === action.strainType)
             } else {
                 filteredStrains = state.addedStrains
