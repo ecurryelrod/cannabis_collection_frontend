@@ -11,10 +11,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: lightgreen;
+  color: black;
+  text-align: center;
+}
+
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 
 .strainContainer {
   display: inline-block;
