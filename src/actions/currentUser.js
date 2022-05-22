@@ -9,3 +9,16 @@ export const setCurrentUser = user => {
 
 // asynchronous action creators
 
+export const login = credentials => {
+    return dispatch => {
+        fetch('http://localhost:3000/login', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(credentials)
+        })
+        .then(resp => resp.json())
+        .then(user => {
+            debugger
+        })
+    }
+}

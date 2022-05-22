@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import { connect } from "react-redux";
+import { login } from "../actions/currentUser";
 
 class LoginForm extends Component {
     state = {
@@ -10,10 +12,15 @@ class LoginForm extends Component {
         this.setState({[e.target.name]: e.target.value})
     }
 
+    handleSubmit = e => {
+        e.preventDefault()
+        this.props.login(this.state)
+    }
+
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <input 
                         type="text" 
                         placeholder="email" 
@@ -38,4 +45,4 @@ class LoginForm extends Component {
     }
 }
 
-export default LoginForm
+export default connect(null, {login})(LoginForm)
