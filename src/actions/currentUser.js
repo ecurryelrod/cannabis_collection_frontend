@@ -1,6 +1,7 @@
 // synchronous action creators
 
 export const setCurrentUser = user => {
+    debugger
     return {
         type: 'SET_CURRENT_USER',
         user
@@ -18,7 +19,7 @@ export const login = credentials => {
         })
         .then(resp => resp.json())
         .then(user => {
-            debugger
+            dispatch(setCurrentUser(user.data))
         })
     }
 }
