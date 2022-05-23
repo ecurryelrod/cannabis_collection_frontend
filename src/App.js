@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { fetchStrains } from './actions/strains';
 import { fetchTypes } from './actions/types';
 import { fetchEffects } from './actions/effects';
+import { getCurrentUser } from './actions/currentUser';
 import Strains from './components/strains/Strains';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -15,6 +16,7 @@ class App extends Component {
     this.props.fetchEffects()
     this.props.fetchStrains()
     this.props.fetchTypes()
+    this.props.getCurrentUser()
   }
 
   render() {
@@ -48,4 +50,4 @@ const mapStateToProps = state => ({
   strains: state.strains
 })
 
-export default connect(mapStateToProps, {fetchEffects, fetchStrains, fetchTypes})(App);
+export default connect(mapStateToProps, {fetchEffects, fetchStrains, fetchTypes, getCurrentUser})(App);
