@@ -9,6 +9,7 @@ import { getCurrentUser } from './actions/currentUser';
 import Strains from './components/strains/Strains';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
+import Logout from './components/Logout';
 import EditStrainForm from './components/strains/EditStrainForm';
 
 class App extends Component {
@@ -40,6 +41,7 @@ class App extends Component {
               />
             }} />
           </Switch>
+          <Logout />
         </Router>
       </div>
     );
