@@ -1,4 +1,7 @@
 # Cannabis Collection Frontend
+
+** I am currently working on login functionality so some pieces of this application might not work properly until this has been completed **
+
 link to backend repo https://github.com/ecurryelrod/cannabis_collection_backend
 
 ## Description
