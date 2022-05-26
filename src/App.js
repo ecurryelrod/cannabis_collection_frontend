@@ -14,7 +14,7 @@ import EditStrainForm from './components/strains/EditStrainForm';
 class App extends Component {
   componentDidMount() {
     this.props.fetchEffects()
-    this.props.fetchStrains()
+    // this.props.fetchStrains()
     this.props.fetchTypes()
     this.props.getCurrentUser()
   }

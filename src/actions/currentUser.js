@@ -1,3 +1,5 @@
+import { setStrains } from "./strains"
+
 // synchronous action creators
 
 export const setCurrentUser = user => {
@@ -26,6 +28,7 @@ export const login = (credentials, history) => {
         .then(resp => resp.json())
         .then(user => {
             dispatch(setCurrentUser(user.data))
+            dispatch(setStrains(user.data.attributes.strains))
             history.push('/strains')
         })
     }
@@ -41,6 +44,7 @@ export const getCurrentUser = () => {
         .then(resp => resp.json())
         .then(user => {
             dispatch(setCurrentUser(user.data))
+            dispatch(setStrains(user.data.attributes.strains))
         })
     }
 }

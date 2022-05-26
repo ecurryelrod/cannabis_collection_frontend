@@ -34,7 +34,7 @@ class Strains extends Component {
                     {this.props.strains.filteredStrains.map(strain => 
                         <Strain 
                             key={strain.id} 
-                            strain={strain.attributes} 
+                            strain={strain} 
                             edit={this.props.editStrain} 
                             delete={this.props.deleteStrain} 
                         />
