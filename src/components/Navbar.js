@@ -1,45 +1,50 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Logout from "./Logout";
 
-const link = {
-    width: "100px",
-    padding: "12px",
-    margin: "1em",
-    background: "lightgreen",
-    textDecoration: "none",
-    color: "black",
-    borderRadius: "10px"
+const NavBar = () => {
+    const link = {
+        width: "100px",
+        padding: "12px",
+        margin: "1em",
+        background: "lightgreen",
+        textDecoration: "none",
+        color: "black",
+        borderRadius: "10px"
+    }
+
+    return (
+        <>
+            <NavLink 
+                to="/" 
+                exact 
+                style={link} 
+                activeStyle={{background: "green", color: "white"}}
+            >
+                Home
+            </NavLink>
+
+            <NavLink 
+                to="/strains" 
+                exact 
+                style={link} 
+                activeStyle={{background: "green", color: "white"}}
+            >
+                Strains
+            </NavLink>
+
+            <NavLink 
+                to="/strains/new" 
+                exact 
+                style={link} 
+                activeStyle={{background: "green", color: "white"}}
+            >
+                Create a New Strain
+            </NavLink>
+
+            <Logout />
+        </>
+    )
 }
-
-const NavBar = () => (
-    <>
-        <NavLink 
-            to="/" 
-            exact 
-            style={link} 
-            activeStyle={{background: "green", color: "white"}}
-        >
-            Home
-        </NavLink>
-
-        <NavLink 
-            to="/strains" 
-            exact 
-            style={link} 
-            activeStyle={{background: "green", color: "white"}}
-        >
-            Strains
-        </NavLink>
-
-        <NavLink 
-            to="/strains/new" 
-            exact 
-            style={link} 
-            activeStyle={{background: "green", color: "white"}}
-        >
-            Create a New Strain
-        </NavLink>
-    </>
-)
 
 export default NavBar
