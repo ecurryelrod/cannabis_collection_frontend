@@ -9,7 +9,6 @@ import { getCurrentUser } from './actions/currentUser';
 import Strains from './components/strains/Strains';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import Logout from './components/Logout';
 import EditStrainForm from './components/strains/EditStrainForm';
 
 class App extends Component {
@@ -27,21 +26,22 @@ class App extends Component {
           <Navbar />
           {/* Switch comp makes sure only one route matches at the same time */}
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" render={routeProps => {
+              return <Home {...routeProps} />
+            }} />
             <Route exact path="/strains" component={Strains} />
             <Route exact path="/strains/new" component={NewStrainForm} />
-            <Route exact path="/strains/:id/edit" render={props => {
-              const strain = this.props.strains.addedStrains.find(strain => strain.id === props.match.params.id)
+            <Route exact path="/strains/:id/edit" render={renderProps => {
+              const strain = this.props.strains.addedStrains.find(strain => strain.id === renderProps.match.params.id)
               
               return <EditStrainForm 
                 strain={strain} 
                 strainEffects={strain.attributes.effects.map(effect => effect.id.toString())} 
                 strainType={strain.attributes.type.id}
-                {...props} 
+                {...renderProps} 
               />
             }} />
           </Switch>
-          <Logout />
         </Router>
       </div>
     );
