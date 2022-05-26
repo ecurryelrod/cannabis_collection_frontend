@@ -34,6 +34,13 @@ export const strainDeleted = strainId => {
     }
 }
 
+export const clearStrainsOnLogout = () => {
+    debugger
+    return {
+        type: 'CLEAR_STRAINS_ON_LOGOUT'
+    }
+}
+
 // asynchronous actions
 export const fetchStrains = () => {
     return dispatch => {

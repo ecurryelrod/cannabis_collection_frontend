@@ -35,6 +35,13 @@ export const strains = (state = {addedStrains: [], filteredStrains: []}, action)
                 filteredStrains: remainingStrains
             }
 
+        case 'CLEAR_STRAINS_ON_LOGOUT':
+            debugger
+            return {
+                addedStrains: [], 
+                filteredStrains: []
+            }
+
         default: return state
     }
 }

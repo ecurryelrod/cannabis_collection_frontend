@@ -1,4 +1,5 @@
 import { setStrains } from "./strains"
+import { clearStrainsOnLogout } from "./strains"
 
 // synchronous action creators
 
@@ -57,6 +58,7 @@ export const logout = (history) => {
             method: 'DELETE'
         })
         .then(() => {
+            dispatch(clearStrainsOnLogout())
             alert('Successfully logged out')
             history.push('/')
         })
