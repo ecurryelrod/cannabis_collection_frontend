@@ -1,24 +1,26 @@
-import React, {Component} from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { logout } from "../actions/currentUser";
-// import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
-class Logout extends Component {
-    handleSubmit = e => {
-        e.preventDefault()
-        this.props.logout()
+const Logout = ({logout}) => {
+    const history = useHistory()
+
+    const link = {
+        width: "100px",
+        padding: "12px",
+        margin: "1em",
+        background: "lightgreen",
+        textDecoration: "none",
+        color: "black",
+        borderRadius: "10px"
     }
 
-    render() {
-        return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    {/* <button className="button"><Link to={"/"} style={{color: "white"}}>Logout</Link></button> */}
-                    <input type="submit" value="Logout" />
-                </form>
-            </div>
-        )
+    const handleOnClick = () => {
+        logout(history)
     }
+
+    return <button style={link} onClick={handleOnClick}>Logout</button>
 }
 
 export default connect(null, {logout})(Logout)
