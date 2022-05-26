@@ -15,7 +15,7 @@ export const clearCurrentUser = () => {
 
 // asynchronous action creators
 
-export const login = credentials => {
+export const login = (credentials, history) => {
     return dispatch => {
         fetch('http://localhost:3000/login', {
             credentials: 'include',
@@ -26,6 +26,7 @@ export const login = credentials => {
         .then(resp => resp.json())
         .then(user => {
             dispatch(setCurrentUser(user.data))
+            history.push('/strains')
         })
     }
 }
@@ -39,17 +40,21 @@ export const getCurrentUser = () => {
         })
         .then(resp => resp.json())
         .then(user => {
-            dispatch(setCurrentUser(user))
+            dispatch(setCurrentUser(user.data))
         })
     }
 }
 
-export const logout = () => {
+export const logout = (history) => {
     return dispatch => {
         dispatch(clearCurrentUser())
         fetch('http://localhost:3000/logout', {
             credentials: 'include',
             method: 'DELETE'
+        })
+        .then(() => {
+            alert('Successfully logged out')
+            history.push('/')
         })
     }
 }
