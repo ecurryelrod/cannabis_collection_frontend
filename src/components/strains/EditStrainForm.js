@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import { connect } from "react-redux";
 import { editStrain } from "../../actions/strains";
+import { Link } from "react-router-dom";
 
 class EditStrainForm extends Component {
     state = {
@@ -124,6 +125,7 @@ class EditStrainForm extends Component {
                     /><br/>
                     <p><strong>Edit Effects Experienced:</strong></p>
                     <div>{effects}</div><br/>
+                    <button className="button"><Link to={`/strains`} style={{color: "white"}}>Cancel</Link></button>
                     <input className="button" type="submit" />
                 </form>
             </div>
