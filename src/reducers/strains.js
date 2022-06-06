@@ -22,7 +22,7 @@ export const strains = (state = {addedStrains: [], filteredStrains: []}, action)
             return {...state, filteredStrains}
         
         case 'UPDATE_STRAIN': 
-            let updatedStrains = state.addedStrains.map(strain => strain.attributes.id === action.strain.attributes.id ? action.strain : strain)
+            let updatedStrains = state.addedStrains.map(strain => strain.id === action.strain.attributes.id ? action.strain.attributes : strain)
             return {
                 addedStrains: updatedStrains,
                 filteredStrains: updatedStrains
@@ -36,7 +36,6 @@ export const strains = (state = {addedStrains: [], filteredStrains: []}, action)
             }
 
         case 'CLEAR_STRAINS_ON_LOGOUT':
-            debugger
             return {
                 addedStrains: [], 
                 filteredStrains: []

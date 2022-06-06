@@ -32,12 +32,14 @@ class App extends Component {
             <Route exact path="/strains" component={Strains} />
             <Route exact path="/strains/new" component={NewStrainForm} />
             <Route exact path="/strains/:id/edit" render={renderProps => {
-              const strain = this.props.strains.addedStrains.find(strain => strain.id === renderProps.match.params.id)
-              
+              const strain = this.props.strains.addedStrains.find(strain => strain.id.toString() === renderProps.match.params.id)
+              // debugger
               return <EditStrainForm 
                 strain={strain} 
-                strainEffects={strain.attributes.effects.map(effect => effect.id.toString())} 
-                strainType={strain.attributes.type.id}
+                strainEffects={strain.effects.map(effect => {
+                  // debugger
+                  return effect.id.toString()})} 
+                strainType={strain.type.id}
                 {...renderProps} 
               />
             }} />
@@ -49,7 +51,8 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  strains: state.strains
+  strains: state.strains,
+  currentUser: state.currentUser
 })
 
 export default connect(mapStateToProps, {fetchEffects, fetchStrains, fetchTypes, getCurrentUser})(App);

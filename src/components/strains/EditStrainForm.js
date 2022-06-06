@@ -4,14 +4,14 @@ import { editStrain } from "../../actions/strains";
 
 class EditStrainForm extends Component {
     state = {
-        id: this.props.strain.attributes.id,
-        name: this.props.strain.attributes.name,
-        description: this.props.strain.attributes.description,
-        terpene: this.props.strain.attributes.terpene,
-        thc_amount: this.props.strain.attributes.thc_amount,
-        cbd_amount: this.props.strain.attributes.cbd_amount,
-        cbg_amount: this.props.strain.attributes.cbg_amount,
-        type_id: this.props.strain.attributes.type.id,
+        id: this.props.strain.id,
+        name: this.props.strain.name,
+        description: this.props.strain.description,
+        terpene: this.props.strain.terpene,
+        thc_amount: this.props.strain.thc_amount,
+        cbd_amount: this.props.strain.cbd_amount,
+        cbg_amount: this.props.strain.cbg_amount,
+        type_id: this.props.strain.type.id,
         effect_ids: this.props.strainEffects
     }
 
@@ -132,7 +132,6 @@ class EditStrainForm extends Component {
 }
 
 const mapStateToProps = state => ({
-    // strains: state.strains,
     types: state.types,
     effects: state.effects
 })

@@ -1,3 +1,5 @@
+import { getCurrentUser } from "./currentUser"
+
 // synchronous actions
 export const setStrains = strains => {
     return {
@@ -35,7 +37,6 @@ export const strainDeleted = strainId => {
 }
 
 export const clearStrainsOnLogout = () => {
-    debugger
     return {
         type: 'CLEAR_STRAINS_ON_LOGOUT'
     }
@@ -83,6 +84,7 @@ export const createStrain = (formData, history) => {
 }
 
 export const editStrain = (strainData, history) => {
+    // debugger
     const strainDataForUpdate = {
         name: strainData.name,
         description: strainData.description,
@@ -102,6 +104,7 @@ export const editStrain = (strainData, history) => {
         .then(resp => resp.json())
         .then(strain => {
             dispatch(updatedStrain(strain.data))
+            dispatch(getCurrentUser())
             history.push('/strains')
         })
     }
