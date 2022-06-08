@@ -11,7 +11,8 @@ class NewStrainForm extends Component {
         cbd_amount: "",
         cbg_amount: "",
         type_id: "1",
-        effect_ids: []
+        effect_ids: [],
+        userId: this.props.currentUser.id.toString()
     }
 
     handleOnChange = e => this.setState({[e.target.name]: e.target.value})
@@ -39,7 +40,8 @@ class NewStrainForm extends Component {
             cbd_amount: "",
             cbg_amount: "",
             type_id: "",
-            effect_ids: []
+            effect_ids: [],
+            userId: this.props.currentUser.id.toString()
         })
     }
 
@@ -133,9 +135,12 @@ class NewStrainForm extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-    types: state.types,
-    effects: state.effects
-})
+const mapStateToProps = state => {
+    return {
+        types: state.types,
+        effects: state.effects,
+        currentUser: state.currentUser
+    }
+}
 
 export default connect(mapStateToProps, {createStrain})(NewStrainForm)

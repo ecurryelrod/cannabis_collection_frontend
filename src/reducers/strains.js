@@ -8,8 +8,8 @@ export const strains = (state = {addedStrains: [], filteredStrains: []}, action)
 
         case 'ADD_STRAIN': 
             return {
-                addedStrains: [...state.addedStrains, action.strain],
-                filteredStrains: [...state.filteredStrains, action.strain]
+                addedStrains: [...state.addedStrains, action.strain.attributes],
+                filteredStrains: [...state.filteredStrains, action.strain.attributes]
             }
 
         case 'FILTER_STRAINS':
@@ -29,7 +29,7 @@ export const strains = (state = {addedStrains: [], filteredStrains: []}, action)
             }
          
         case 'DELETE_STRAIN': 
-            let remainingStrains = state.addedStrains.filter(strain => strain.attributes.id !== action.strainId)
+            let remainingStrains = state.addedStrains.filter(strain => strain.id !== action.strainId)
             return {
                 addedStrains: remainingStrains,
                 filteredStrains: remainingStrains

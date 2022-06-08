@@ -67,17 +67,20 @@ export const createStrain = (formData, history) => {
             cbd_amount: formData.cbd_amount,
             cbg_amount: formData.cbg_amount,
             type_id: formData.type_id,
-            effect_ids: formData.effect_ids
+            effect_ids: formData.effect_ids,
+            user_id: formData.userId
         }
 
         fetch('http://127.0.0.1:3000/api/v1/strains', {
+            credentials: 'include',
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(sendableData)
         })
         .then(resp => resp.json())
-        .then(strains => {
-            dispatch(addStrain(strains.data))
+        .then(strain => {
+            dispatch(addStrain(strain.data))
+            dispatch(getCurrentUser())
             history.push('/strains')
         })
     }
@@ -116,6 +119,9 @@ export const deleteStrain = strainId => {
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'}
         })
-        .then(resp => dispatch(strainDeleted(strainId)))
+        .then(resp => {
+            dispatch(strainDeleted(strainId))
+            dispatch(getCurrentUser())
+        })
     }
 }

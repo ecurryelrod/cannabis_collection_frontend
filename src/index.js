@@ -9,7 +9,7 @@ import App from './App';
 import { strains } from './reducers/strains'
 import { types } from './reducers/types';
 import { effects } from './reducers/effects';
-import { users } from './reducers/users';
+// import { users } from './reducers/users';
 import { currentUser } from './reducers/currentUser';
 import reportWebVitals from './reportWebVitals';
 
@@ -21,7 +21,7 @@ const rootReducer = combineReducers({
   strains,
   types,
   effects,
-  users,
+  // users,
   currentUser
 })
 
