@@ -10,6 +10,8 @@ import Strains from './components/strains/Strains';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import EditStrainForm from './components/strains/EditStrainForm';
+import LoginForm from './components/LoginForm';
+import SignUpForm from './components/SignUpForm';
 
 class App extends Component {
   componentDidMount() {
@@ -42,6 +44,12 @@ class App extends Component {
                 strainType={strain.type.id}
                 {...renderProps} 
               />
+            }} />
+            <Route exact path="/login" render={renderProps => {
+              return <LoginForm {...renderProps} />
+            }} />
+            <Route exact path="/signup" render={renderProps => {
+              return <SignUpForm {...renderProps} />
             }} />
           </Switch>
         </Router>
