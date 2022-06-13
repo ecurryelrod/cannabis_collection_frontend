@@ -35,6 +35,26 @@ export const login = (credentials, history) => {
     }
 }
 
+export const signup = (newUserInput, history) => {
+    const userInput = {
+        user: newUserInput
+    }
+
+    return dispatch => {
+        fetch('http://localhost:3000/signup', {
+            credentials: 'include',
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(userInput)
+        })
+        .then(resp => resp.json())
+        .then(user => {
+            dispatch(setCurrentUser(user.data))
+            history.push('/strains/new')
+        })
+    }
+}
+
 export const getCurrentUser = () => {
     return dispatch => {
         fetch('http://localhost:3000/get_current_user', {

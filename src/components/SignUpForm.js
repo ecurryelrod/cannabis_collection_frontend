@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import { connect } from "react-redux";
+import { signup } from "../actions/currentUser";
 
 class SignUpForm extends Component {
     state = {
@@ -13,8 +15,7 @@ class SignUpForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        debugger
-        // call reducer
+        this.props.signup(this.state, this.props.history)
         this.setState({
             name: "",
             email: "",
@@ -34,7 +35,7 @@ class SignUpForm extends Component {
                         onChange={this.handleOnChange}
                     />
                     <input 
-                        type="text"
+                        type="email"
                         placeholder="Email"
                         name="email"
                         value={this.state.email}
@@ -54,4 +55,4 @@ class SignUpForm extends Component {
     }
 }
 
-export default SignUpForm
+export default connect(null, {signup})(SignUpForm)
