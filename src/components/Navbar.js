@@ -16,15 +16,6 @@ const NavBar = () => {
     return (
         <>
             <NavLink 
-                to="/" 
-                exact 
-                style={link} 
-                activeStyle={{background: "green", color: "white"}}
-            >
-                Home
-            </NavLink>
-
-            <NavLink 
                 to="/strains" 
                 exact 
                 style={link} 
