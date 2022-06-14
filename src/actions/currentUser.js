@@ -49,8 +49,12 @@ export const signup = (newUserInput, history) => {
         })
         .then(resp => resp.json())
         .then(user => {
-            dispatch(setCurrentUser(user.data))
-            history.push('/strains/new')
+            if (user.error) {
+                alert(user.error)
+            } else {
+                dispatch(setCurrentUser(user.data))
+                history.push('/strains/new')
+            }
         })
     }
 }
