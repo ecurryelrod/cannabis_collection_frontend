@@ -16,7 +16,7 @@ const Strain = props => {
                 {props.strain.effects.map(effect => <div key={effect.id}>{effect.name}</div>)}
             </div>
             <br/>
-            <button className="button"><Link to={`/strains/${props.strain.id}/edit`} style={{color: "white"}}>Edit</Link></button>
+            <button className="button"><Link to={`/strains/${props.strain.id}/edit`} style={{color: "white", textDecoration: 'none'}}>Edit</Link></button>
             <button className="button" onClick={() => props.delete(props.strain.id)}>Delete</button>
             <br/><br/>
         </div>

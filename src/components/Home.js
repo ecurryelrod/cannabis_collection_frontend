@@ -7,14 +7,22 @@ const Home = (props) => {
         <div>
             <h1>Welcome to Cannabis Collection</h1>
             <h3>A place to store your highest experiences</h3>
-            <button className="button"><Link
-                to="/login"
-                style={{color: "white"}}
-            >Login</Link></button>
-            <button className="button"><Link
-                to="/signup"
-                style={{color: "white"}}
-            >Sign Up</Link></button>
+            <button className="loginSignupButton">
+                <Link
+                    to="/login"
+                    style={{color: "lightgreen", textDecoration: 'none'}}
+                >
+                Login
+                </Link>
+            </button>
+            <button className="loginSignupButton">
+                <Link
+                    to="/signup"
+                    style={{color: "lightgreen", textDecoration: 'none'}}
+                >
+                Sign Up
+                </Link>
+            </button>
             {/* <LoginForm history={props.history} /> */}
             {/* <SignUpForm history = {props.history} /> */}
             {/* instead of LoginForm have Login and Signup components */}

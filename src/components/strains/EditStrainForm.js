@@ -125,7 +125,7 @@ class EditStrainForm extends Component {
                     /><br/>
                     <p><strong>Edit Effects Experienced:</strong></p>
                     <div>{effects}</div><br/>
-                    <button className="button"><Link to={`/strains`} style={{color: "white"}}>Cancel</Link></button>
+                    <button className="button"><Link to={`/strains`} style={{color: "white", textDecoration: 'none'}}>Cancel</Link></button>
                     <input className="button" type="submit" />
                 </form>
             </div>

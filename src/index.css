@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 20px;
   background: url("../public/weedPic.png");
   background-position: center;
   background-size: cover;
@@ -16,9 +16,12 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: lightgreen;
+  background-color: #CDC2AE;
   color: black;
   text-align: center;
+  border: 5px solid darkgreen;
+  padding: 5px;
+
 }
 
 /* code {
@@ -57,6 +60,7 @@ body {
   border-radius: 5px;
   margin-left: 2px;
   margin-right: 2px;
+  padding: 5px;
 }
 
 textarea {
@@ -65,22 +69,40 @@ textarea {
 }
 
 h1 {
-  color: white;
+  color: darkgreen;
+  background: lightgreen;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 5px solid darkgreen;
+  border-radius: 20px;
+  opacity: 0.8;
 }
 
 h2 {
   color: white;
+
 }
 
 h3 {
   color: white;
+  /* background-color: lightgreen;
+  margin-left: 100px;
+  margin-right: 100px;
+  border: 2px solid darkgreen;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 5px solid darkgreen;
+  border-radius: 20px;
+  opacity: 0.8; */
 }
 
 .button {
   border-radius: 5px;
   margin: 5px;
   background-color: darkgreen;
-  color: white;
+  color: lightgreen;
   padding: 5px 10px;
 }
 
@@ -89,4 +111,26 @@ h3 {
   margin: 5px;
 }
 
+.selectMenu {
+  padding: 5px;
+  background-color: lightgreen;
+  border: 2px solid darkgreen;
+  border-radius: 5px;
+}
 
+.loginSignupButton {
+  border-radius: 5px;
+  margin: 5px;
+  background-color: darkgreen;
+  color: lightgreen;
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
+.backButton {
+  border-radius: 5px;
+  margin: 5px;
+  background-color: darkgreen;
+  padding: 10px 20px;
+  font-size: 20px;
+}

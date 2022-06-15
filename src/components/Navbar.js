@@ -10,6 +10,7 @@ const NavBar = () => {
         background: "lightgreen",
         textDecoration: "none",
         color: "black",
+        border: "2px solid darkgreen",
         borderRadius: "10px"
     }
 
