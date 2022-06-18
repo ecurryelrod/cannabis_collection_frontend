@@ -10,10 +10,11 @@ const Logout = ({logout}) => {
         width: "100px",
         padding: "12px",
         margin: "1em",
-        background: "lightgreen",
+        background: "#D3EBCD",
         textDecoration: "none",
         color: "black",
-        borderRadius: "10px"
+        borderRadius: "10px",
+        borderColor: "#446A46"
     }
 
     const handleOnClick = () => {

@@ -21,6 +21,7 @@ class LoginForm extends Component {
     render() {
         return (
             <div>
+                <h1>Welcome to Cannabis Collection</h1>
                 <h2>Please Login Below</h2>
                 <form className="form" onSubmit={this.handleSubmit}>
                     <input 
@@ -46,10 +47,10 @@ class LoginForm extends Component {
                     />
                 </form>
                 <br/>
-                <button className="backButton">
+                <button className="loginSignupBackButton">
                     <Link
                         to="/"
-                        style={{color: "lightgreen", textDecoration: 'none'}}
+                        style={{color: "#D3EBCD", textDecoration: 'none'}}
                     >
                     Back to Home
                     </Link>

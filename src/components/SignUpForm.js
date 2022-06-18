@@ -27,8 +27,10 @@ class SignUpForm extends Component {
     render() {
         return (
             <div>
-                <h2>Create an Account Below</h2>
+                <h1>Welcome to Cannabis Collection</h1>
+                <h2>Create a New Account</h2>
                 <form className="form" onSubmit={this.handleSubmit}>
+                    <label>Full Name: </label>
                     <input 
                         className="formInput"
                         type="text" 
@@ -37,6 +39,8 @@ class SignUpForm extends Component {
                         value = {this.state.name}
                         onChange={this.handleOnChange}
                     />
+                    <br/><br/>
+                    <label>Email: </label>
                     <input 
                         className="formInput"
                         type="email"
@@ -45,6 +49,8 @@ class SignUpForm extends Component {
                         value={this.state.email}
                         onChange={this.handleOnChange}
                     />
+                    <br/><br/>
+                    <label>Password: </label>
                     <input 
                         className="formInput"
                         type="password"
@@ -53,13 +59,14 @@ class SignUpForm extends Component {
                         value={this.state.password}
                         onChange={this.handleOnChange}
                     />
+                    <br/><br/>
                     <input className="button" type="submit" />
                 </form>
                 <br/>
-                <button className="backButton">
+                <button className="loginSignupBackButton">
                     <Link
                         to="/"
-                        style={{color: "lightgreen", textDecoration: 'none'}}
+                        style={{color: "#D3EBCD", textDecoration: 'none'}}
                     >
                     Back to Home
                     </Link>

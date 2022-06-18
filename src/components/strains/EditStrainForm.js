@@ -66,17 +66,20 @@ class EditStrainForm extends Component {
             <div>
                 <h2>Edit the Experience</h2>
 
-                <form className="form" onSubmit={this.handleOnSubmit}>
+                <form className="form" style={{textAlign: 'left'}} onSubmit={this.handleOnSubmit}>
                     <p>
                         <strong>Edit Strain Type: </strong>
                         <select 
                             name="type_id"
+                            className="formSelect"
                             defaultValue={this.state.type_id}
                             onChange={this.handleOnChange}
                         >
                             {types}
-                        </select><br/>
+                        </select>
                     </p>
+                    <br/>
+                    <label>Strain Name: </label>
                     <input 
                         className="formInput"
                         type="text"
@@ -84,6 +87,7 @@ class EditStrainForm extends Component {
                         value={this.state.name}
                         onChange={this.handleOnChange}
                     /><br/><br/>
+                    <label>Description: </label><br/>
                     <textarea
                         type="text"
                         name="description"
@@ -92,6 +96,7 @@ class EditStrainForm extends Component {
                         cols="20"
                         rows="3"
                     ></textarea><br/><br/>
+                    <label>Aromas/Flavors: </label>
                     <input 
                         className="formInput"
                         type="text"
@@ -99,7 +104,7 @@ class EditStrainForm extends Component {
                         value={this.state.terpene}
                         onChange={this.handleOnChange}
                     /><br/><br/>
-                    THC Amount (mg)
+                    <label>THC Amount (mg)</label>
                     <input 
                         className="formInput"
                         type="text"
@@ -107,7 +112,7 @@ class EditStrainForm extends Component {
                         value={this.state.thc_amount}
                         onChange={this.handleOnChange}
                     /><br/>
-                    CBD Amount (mg)
+                    <label>CBD Amount (mg)</label>
                     <input 
                         className="formInput"
                         type="text"
@@ -115,7 +120,7 @@ class EditStrainForm extends Component {
                         value={this.state.cbd_amount}
                         onChange={this.handleOnChange}
                     /><br/>
-                    CBG Amount (mg)
+                    <label>CBG Amount (mg)</label>
                     <input 
                         className="formInput"
                         type="text"
@@ -128,6 +133,7 @@ class EditStrainForm extends Component {
                     <button className="button"><Link to={`/strains`} style={{color: "white", textDecoration: 'none'}}>Cancel</Link></button>
                     <input className="button" type="submit" />
                 </form>
+                <br/><br/><br/><br/>
             </div>
         )
     }

@@ -6,19 +6,19 @@ const Home = (props) => {
     return (
         <div>
             <h1>Welcome to Cannabis Collection</h1>
-            <h3>A place to store your highest experiences</h3>
-            <button className="loginSignupButton">
+            <h2>A place to store your highest experiences</h2>
+            <button className="loginSignupBackButton">
                 <Link
                     to="/login"
-                    style={{color: "lightgreen", textDecoration: 'none'}}
+                    style={{color: "#D3EBCD", textDecoration: 'none'}}
                 >
                 Login
                 </Link>
             </button>
-            <button className="loginSignupButton">
+            <button className="loginSignupBackButton">
                 <Link
                     to="/signup"
-                    style={{color: "lightgreen", textDecoration: 'none'}}
+                    style={{color: "#D3EBCD", textDecoration: 'none'}}
                 >
                 Sign Up
                 </Link>

@@ -69,59 +69,66 @@ class NewStrainForm extends Component {
         return (
             <div>
                 <h2>Add a New Experience</h2>
-                <form className="form" onSubmit={this.handleOnSubmit}>
+                <form className="form" style={{textAlign: 'left'}} onSubmit={this.handleOnSubmit}>
                     <p>
                         <strong>Select Strain Type: </strong>
-                        <select name="type_id" value={this.state.type_id} onChange={this.handleOnChange}>
-                            {types}
-                        </select><br/>
+                        <select 
+                            name="type_id" 
+                            className="formSelect"
+                            value={this.state.type_id} 
+                            onChange={this.handleOnChange}
+                        >
+                        {types}
+                        </select>
                     </p>
+                    <br/>
+                    <label>Strain Name: </label>
                     <input 
                         className="formInput"
                         type="text"
                         name="name" 
-                        placeholder="Strain Name"
                         value={this.state.name}
                         onChange={this.handleOnChange}
                     /><br/><br/>
+                    <label>Description: </label><br/>
                     <textarea
                         type="text"
                         name="description" 
-                        placeholder="description"
                         value={this.state.description} 
                         onChange={this.handleOnChange}
                         cols="20"
                         rows="3"
                     ></textarea><br/><br/>
+                    <label>Aroma/Flavor: </label>
                     <input 
                         className="formInput"
                         type="text"
                         name="terpene" 
-                        placeholder="aroma/flavor" 
                         value={this.state.terpene}
                         onChange={this.handleOnChange} 
                     /><br/><br/>
+                    <label>THC Amount: </label>
                     <input 
                         className="formInput"
                         type="number"
                         name="thc_amount" 
-                        placeholder="THC Amount (mg)" 
                         value={this.state.thc_amount}
                         onChange={this.handleOnChange}
-                    />
+                    /><br/>
+                    <label>CBD Amount: </label>
                     <input 
                         className="formInput"
                         type="number"
                         name="cbd_amount" 
-                        placeholder="CBD Amount (mg)" 
                         value={this.state.cbd_amount}
                         onChange={this.handleOnChange}
                     />
+                    <br/>
+                    <label>CBG Amount: </label>
                     <input 
                         className="formInput"
                         type="number"
                         name="cbg_amount" 
-                        placeholder="CBG Amount (mg)" 
                         value={this.state.cbg_amount}
                         onChange={this.handleOnChange}
                     /><br/>
@@ -130,6 +137,7 @@ class NewStrainForm extends Component {
                     <br/>
                     <input className="button" type="submit" />
                 </form>
+                <br/><br/><br/><br/>
             </div>
         )
     }
