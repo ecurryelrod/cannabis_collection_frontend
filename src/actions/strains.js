@@ -79,9 +79,14 @@ export const createStrain = (formData, history) => {
         })
         .then(resp => resp.json())
         .then(strain => {
-            dispatch(addStrain(strain.data))
-            dispatch(getCurrentUser())
-            history.push('/strains')
+            if (strain.error) {
+                alert(strain.error)
+            } else {
+                dispatch(addStrain(strain.data))
+                // need to getCurrentUser to update currentUser strains in Redux store
+                dispatch(getCurrentUser())
+                history.push('/strains')
+            }
         })
     }
 }
@@ -107,6 +112,7 @@ export const editStrain = (strainData, history) => {
         .then(resp => resp.json())
         .then(strain => {
             dispatch(updatedStrain(strain.data))
+            // need to getCurrentUser to update currentUser strains in Redux store
             dispatch(getCurrentUser())
             history.push('/strains')
         })
@@ -121,6 +127,7 @@ export const deleteStrain = strainId => {
         })
         .then(resp => {
             dispatch(strainDeleted(strainId))
+            // need to getCurrentUser to update currentUser strains in Redux store
             dispatch(getCurrentUser())
         })
     }

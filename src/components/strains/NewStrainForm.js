@@ -32,17 +32,17 @@ class NewStrainForm extends Component {
     handleOnSubmit = e => {
         e.preventDefault()
         this.props.createStrain(this.state, this.props.history)
-        this.setState({
-            name: "",
-            description: "",
-            terpene: "",
-            thc_amount: "",
-            cbd_amount: "",
-            cbg_amount: "",
-            type_id: "",
-            effect_ids: [],
-            userId: this.props.currentUser.id.toString()
-        })
+        // this.setState({
+        //     name: "",
+        //     description: "",
+        //     terpene: "",
+        //     thc_amount: "",
+        //     cbd_amount: "",
+        //     cbg_amount: "",
+        //     type_id: "",
+        //     effect_ids: [],
+        //     userId: this.props.currentUser.id.toString()
+        // })
     }
 
     render() {
@@ -107,7 +107,7 @@ class NewStrainForm extends Component {
                         value={this.state.terpene}
                         onChange={this.handleOnChange} 
                     /><br/><br/>
-                    <label>THC Amount: </label>
+                    <label>THC Amount (mg): </label>
                     <input 
                         className="formInput"
                         type="number"
@@ -115,7 +115,7 @@ class NewStrainForm extends Component {
                         value={this.state.thc_amount}
                         onChange={this.handleOnChange}
                     /><br/>
-                    <label>CBD Amount: </label>
+                    <label>CBD Amount (mg): </label>
                     <input 
                         className="formInput"
                         type="number"
@@ -124,7 +124,7 @@ class NewStrainForm extends Component {
                         onChange={this.handleOnChange}
                     />
                     <br/>
-                    <label>CBG Amount: </label>
+                    <label>CBG Amount (mg): </label>
                     <input 
                         className="formInput"
                         type="number"
