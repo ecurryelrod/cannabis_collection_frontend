@@ -9,7 +9,7 @@ export const setTypes = types => {
 // asynchronous actions
 export const fetchTypes = () => {
     return dispatch => {
-        fetch('http://127.0.0.1:3000/api/v1/types')
+        fetch('https://cannabis-collection.herokuapp.com/api/v1/types')
         .then(resp => resp.json())
         .then(types => dispatch(setTypes(types.data)))
     }
