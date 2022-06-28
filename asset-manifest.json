@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/cannabis_collection_frontend/static/css/main.a0ebb88c.css",
-    "main.js": "/cannabis_collection_frontend/static/js/main.425c1a76.js",
+    "main.js": "/cannabis_collection_frontend/static/js/main.53b64f4d.js",
     "static/js/787.6d620b0e.chunk.js": "/cannabis_collection_frontend/static/js/787.6d620b0e.chunk.js",
     "static/media/weedPic.png": "/cannabis_collection_frontend/static/media/weedPic.db9df0bc8c94936b5740.png",
     "index.html": "/cannabis_collection_frontend/index.html",
     "main.a0ebb88c.css.map": "/cannabis_collection_frontend/static/css/main.a0ebb88c.css.map",
-    "main.425c1a76.js.map": "/cannabis_collection_frontend/static/js/main.425c1a76.js.map",
+    "main.53b64f4d.js.map": "/cannabis_collection_frontend/static/js/main.53b64f4d.js.map",
     "787.6d620b0e.chunk.js.map": "/cannabis_collection_frontend/static/js/787.6d620b0e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a0ebb88c.css",
-    "static/js/main.425c1a76.js"
+    "static/js/main.53b64f4d.js"
   ]
 }
