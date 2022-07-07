@@ -9,8 +9,8 @@ export const setEffects = effects => {
 // asynchronous actions
 export const fetchEffects = () => {
     return dispatch => {
-        fetch('http://127.0.0.1:3000/api/v1/effects')
+        fetch('https://cannabis-collection.herokuapp.com/api/v1/effects')
         .then(resp => resp.json())
-        .then(effects => dispatch(setEffects(effects.data)))
+        .then(effects => {dispatch(setEffects(effects.data))})
     }
 }

@@ -45,5 +45,5 @@
   "devDependencies": {
     "gh-pages": "^4.0.0"
   },
-  "homepage": "https://ecurryelrod.github.io/cannabis_collection_frontend/"
+  "homepage": "http://localhost:3000/cannabis_collection_frontend/"
 }

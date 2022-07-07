@@ -28,6 +28,7 @@ export const login = (credentials, history) => {
         })
         .then(resp => resp.json())
         .then(user => {
+            debugger
             dispatch(setCurrentUser(user.data))
             dispatch(setStrains(user.data.attributes.strains))
             history.push('/strains')
@@ -64,13 +65,16 @@ export const getCurrentUser = () => {
         fetch('https://cannabis-collection.herokuapp.com/get_current_user', {
             credentials: 'include',
             method: 'GET',
-            headers: {'Content-Type': 'application/json'}
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': 'http://localhost:3000/cannabis_collection_frontend'
+            }
         })
         .then(resp => resp.json())
         .then(user => {
-            debugger
-            dispatch(setCurrentUser(user.data))
-            dispatch(setStrains(user.data.attributes.strains))
+            // debugger
+            // dispatch(setCurrentUser(user.data))
+            // dispatch(setStrains(user.data.attributes.strains))
         })
     }
 }
