@@ -61,14 +61,13 @@ export const signup = (newUserInput, history) => {
 
 export const getCurrentUser = () => {
     return dispatch => {
-        fetch('https://cannabis-collection.herokuapp.com/get_current_user', {
+        fetch('http://localhost:3000/get_current_user', {
             credentials: 'include',
             method: 'GET',
             headers: {'Content-Type': 'application/json'}
         })
         .then(resp => resp.json())
         .then(user => {
-            debugger
             dispatch(setCurrentUser(user.data))
             dispatch(setStrains(user.data.attributes.strains))
         })
