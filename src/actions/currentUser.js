@@ -20,7 +20,7 @@ export const clearCurrentUser = () => {
 
 export const login = (credentials, history) => {
     return dispatch => {
-        fetch('http://localhost:3000/login', {
+        fetch('https://cannabis-collection.herokuapp.com/login', {
             credentials: 'include',
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
@@ -28,7 +28,6 @@ export const login = (credentials, history) => {
         })
         .then(resp => resp.json())
         .then(user => {
-            debugger
             dispatch(setCurrentUser(user.data))
             dispatch(setStrains(user.data.attributes.strains))
             history.push('/strains')
@@ -42,7 +41,7 @@ export const signup = (newUserInput, history) => {
     }
 
     return dispatch => {
-        fetch('http://localhost:3000/signup', {
+        fetch('https://cannabis-collection.herokuapp.com/signup', {
             credentials: 'include',
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
@@ -66,15 +65,13 @@ export const getCurrentUser = () => {
             credentials: 'include',
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': 'http://localhost:3000/cannabis_collection_frontend'
+                'Content-Type': 'application/json'
             }
         })
         .then(resp => resp.json())
         .then(user => {
-            // debugger
-            // dispatch(setCurrentUser(user.data))
-            // dispatch(setStrains(user.data.attributes.strains))
+            dispatch(setCurrentUser(user.data))
+            dispatch(setStrains(user.data.attributes.strains))
         })
     }
 }
@@ -82,7 +79,7 @@ export const getCurrentUser = () => {
 export const logout = (history) => {
     return dispatch => {
         dispatch(clearCurrentUser())
-        fetch('http://localhost:3000/logout', {
+        fetch('https://cannabis-collection.herokuapp.com/logout', {
             credentials: 'include',
             method: 'DELETE'
         })

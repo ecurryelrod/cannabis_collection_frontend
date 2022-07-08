@@ -21,31 +21,31 @@ class App extends Component {
   }
 
   render() {
-    // if (this.props.loggedIn) {
-    //   return (
-    //     <div className="App">
-    //       <Router>
-    //         <Navbar />
-    //         {/* Switch comp makes sure only one route matches at the same time */}
-    //         <Switch>
-    //           <Route exact path="/strains" component={Strains} />
-    //           <Route exact path="/strains/new" component={NewStrainForm} />
-    //           <Route exact path="/strains/:id/edit" render={renderProps => {
-    //             const strain = this.props.strains.addedStrains.find(strain => strain.id.toString() === renderProps.match.params.id)
+    if (this.props.loggedIn) {
+      return (
+        <div className="App">
+          <Router>
+            <Navbar />
+            {/* Switch comp makes sure only one route matches at the same time */}
+            <Switch>
+              <Route exact path="/strains" component={Strains} />
+              <Route exact path="/strains/new" component={NewStrainForm} />
+              <Route exact path="/strains/:id/edit" render={renderProps => {
+                const strain = this.props.strains.addedStrains.find(strain => strain.id.toString() === renderProps.match.params.id)
                 
-    //             return <EditStrainForm 
-    //               strain={strain} 
-    //               strainEffects={strain.effects.map(effect => {
-    //                 return effect.id.toString()})} 
-    //               strainType={strain.type.id}
-    //               {...renderProps} 
-    //             />
-    //           }} />
-    //         </Switch>
-    //       </Router>
-    //     </div>
-    //   )
-    // }
+                return <EditStrainForm 
+                  strain={strain} 
+                  strainEffects={strain.effects.map(effect => {
+                    return effect.id.toString()})} 
+                  strainType={strain.type.id}
+                  {...renderProps} 
+                />
+              }} />
+            </Switch>
+          </Router>
+        </div>
+      )
+    }
     return (
       <div className="App">
         <Router>
